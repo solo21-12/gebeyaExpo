@@ -87,8 +87,8 @@ export default function AppDesktopNavMenu({
                   {menuOptions.map((option, index) => (
                     <motion.div
                       key={option.lable}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
                       transition={{ duration: 1 }}
                     >
                       <Link
