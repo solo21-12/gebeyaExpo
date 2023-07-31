@@ -85,11 +85,7 @@ export default function AppDesktopNavMenu({
               <div className="  flex flex-col gap-5  list-none text-White mb-8 sm:mb-0  mt-10">
                 <AnimatePresence initial={false}>
                   {menuOptions.map((option, index) => (
-                    <motion.div
-                      key={option.lable}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 1 }}
+                    <div
                     >
                       <Link
                         className={`cursor-pointer hover:border-b-2 hover:border-b-BlueLight text-lg p-3 items-center rounded-sm sm:pl-5 transition-all duration-100  `}
@@ -97,7 +93,7 @@ export default function AppDesktopNavMenu({
                       >
                         {option.lable}
                       </Link>
-                    </motion.div>
+                    </div>
                   ))}
                 </AnimatePresence>
               </div>
