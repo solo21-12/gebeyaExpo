@@ -75,7 +75,7 @@ export default function AppDesktopNavMenu({
                 y: -200,
               }}
               transition={{
-                duration: 2,
+                duration: 1,
               }}
               className=" mt-10"
             >
