@@ -46,7 +46,7 @@ export default function AppSliderWrapper({ children }: Props) {
         setIsOpen={pathSelected}
       />
       <div
-        className={` absolute top-2 left-0 right-0 bg-white min-h-screen rounded-tl-[3rem] rounded-tr-[3rem] transition-transform transform ease-in-out duration-1000 ${
+        className={` absolute top-2 left-0 right-0 bg-white min-h-screen rounded-tl-[3rem] rounded-tr-[3rem] transition-transform transform ease-in-out duration-1000 scroll-smooth ${
           isOpen ? " translate-y-full md:translate-y-[85vh] " : "top-2 "
         }`}
       >
