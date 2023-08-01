@@ -1,5 +1,6 @@
 import AppButton from "./Buttons/AppButton";
 import AppButtonDefult from "./Buttons/AppButtonDefult";
+import MoreCardCircle from "./Home/MoreCardCircular";
 import VideoPopup from "./Home/VideoPop";
 import WhyExibitCard from "./Home/WhyExibitCard";
 import MoreCard from "./Home/moreCard";
@@ -13,5 +14,6 @@ export {
   Pargraph,
   Header,
   WhyExibitCard,
-  MoreCard
+  MoreCard,
+  MoreCardCircle,
 };
