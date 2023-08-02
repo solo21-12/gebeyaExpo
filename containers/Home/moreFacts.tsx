@@ -38,14 +38,13 @@ export default function MoreFacts({}: Props) {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="h-screen w-[85%] mx-auto"
+        className=" mb-20 lg:mb-0 lg:h-[80vh] w-[85%] mx-auto"
         style={{
           backgroundImage: `url(${'/logo-08.png'})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
+          backgroundPosition: "right",
           width: "100%",
-          height: "100vh",
         }}
       >
         <Header lable={"More Facts About"} />
@@ -55,7 +54,7 @@ export default function MoreFacts({}: Props) {
           className="mt-5"
         />
 
-        <div className="flex justify-between mt-16 px-10 overflow-x-auto overflow-y-hidden">
+        <div className="flex justify-between mt-16 lg:px-10 overflow-x-auto overflow-y-hidden">
           {moreFactData.map((item, index) => (
             <MoreCardCircle Item={item} index={index} key={index} />
           ))}

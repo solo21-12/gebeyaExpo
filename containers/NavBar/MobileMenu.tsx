@@ -6,6 +6,7 @@ import Link from "next/link";
 import { NavList } from "@/constants/navbarlist";
 import { Options } from "@/types/navbarlist";
 import { motion, AnimatePresence } from "framer-motion";
+import { NavVariants } from "@/utils/motion";
 
 type Props = {
   isOpen: boolean;
@@ -27,21 +28,10 @@ export default function AppMobileNavMenu({
       {isOpen && (
         <div className=" pl-10 md:hidden block">
           <motion.div
-            initial={{
-              opacity: 0,
-              y: -200,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: -200,
-            }}
-            transition={{
-              duration: 1,
-            }}
+            variants={NavVariants}
+            initial="hidden"
+            whileInView="show"
+            exit="exit"
             className="  flex flex-col  list-none text-White  justify-between mb-8 sm:mb-0 md:border-l-2  md:border-b-0 md:border-White  h-[30vh]  mt-10 pb-5"
           >
             {NavList.map((list, index) => (

@@ -2,8 +2,9 @@
 
 import { VideoPopup } from "@/components";
 import { VideoData } from "@/constants/homepage";
+import { ZoomIn } from "@/utils/motion";
+import { motion } from "framer-motion";
 import React, { useState } from "react";
-
 const YourComponent: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
   const { videoId } = VideoData;
@@ -13,7 +14,12 @@ const YourComponent: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-[80vh]  mb-20">
+    <motion.div
+      variants={ZoomIn(0, 1.5)}
+      initial="hidden"
+      whileInView="show"
+      className="relative w-full h-[80vh]  mb-20"
+    >
       {isPopupOpen ? (
         <VideoPopup isOpen={isPopupOpen} videoId={videoId} />
       ) : (
@@ -41,7 +47,7 @@ const YourComponent: React.FC = () => {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

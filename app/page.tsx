@@ -1,6 +1,14 @@
 "use client";
 
-import { Hero, MoreFacts, VideoPlayer, WhyExibiti } from "@/containers";
+import {
+  ContactUs,
+  Hero,
+  MoreFacts,
+  Partners,
+  PhotoGallery,
+  VideoPlayer,
+  WhyExibiti,
+} from "@/containers";
 
 export default function Home() {
   return (
@@ -8,7 +16,10 @@ export default function Home() {
       <Hero />
       <VideoPlayer />
       <WhyExibiti />
-      <MoreFacts/>
+      <MoreFacts />
+      <PhotoGallery />
+      <Partners />
+      <ContactUs/>
     </main>
   );
 }

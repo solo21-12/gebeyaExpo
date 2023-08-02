@@ -43,3 +43,75 @@ export const WhyExibitData = {
     },
   ],
 };
+
+export const PhotoGalleryData = ["/image1.png", "/image2.png", "/image3.png"];
+
+export const PartnersData = [
+  {
+    logo: "/partner1.webp",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "/partner2.webp",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "/partner3.png",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "/partner4.png",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "/partner5.jpg",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "/partner6.png",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "https://www.thebig5constructethiopia.com/wp-content/uploads/sites/5/2020/02/ufi-1.jpg",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "https://www.thebig5constructethiopia.com/wp-content/uploads/sites/5/2020/02/aeo-1.jpg",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "https://www.thebig5constructethiopia.com/wp-content/uploads/sites/5/2023/04/309397706_157258823656499_8651497195518588468_n.jpg",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "https://www.thebig5constructethiopia.com/wp-content/uploads/sites/5/2023/04/Ethiopian-Skylight-Logo-1.png",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "https://www.thebig5constructethiopia.com/wp-content/uploads/sites/5/2020/02/dmg-events-logo-colour-300x46-1.jpg",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "https://www.thebig5constructethiopia.com/wp-content/uploads/sites/5/2023/04/Logo.jpg",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "https://www.thebig5constructethiopia.com/wp-content/uploads/sites/5/2021/06/CIOB_DIGITAL_LOGO_BLUE_RGB.png",
+    partnerLevel: "Golden",
+  },
+  {
+    logo: "https://www.thebig5constructethiopia.com/wp-content/uploads/sites/5/2023/05/OSH-Association.png",
+    partnerLevel: "Golden",
+  },
+];
+
+export const OfficeData = [
+  {
+    location: "Bole Rwanda,Addis Ababa",
+    phone: ["+2512345678", "+2512345678"],
+  },
+  {
+    location: "Bole Rwanda,Addis Ababa",
+    phone: ["+2512345678", "+2512345678"],
+  },
+];

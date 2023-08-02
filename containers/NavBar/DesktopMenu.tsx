@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { NavList } from "@/constants/navbarlist";
 import { Options } from "@/types/navbarlist";
 import { motion, AnimatePresence } from "framer-motion";
+import { NavVariants } from "@/utils/motion";
 
 type Props = {
   isOpen: boolean;
@@ -28,21 +29,10 @@ export default function AppDesktopNavMenu({
       {isOpen && (
         <div className="  justify-between hidden md:flex">
           <motion.div
-            initial={{
-              opacity: 0,
-              y: -200,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: -200,
-            }}
-            transition={{
-              duration: 1,
-            }}
+            variants={NavVariants}
+            initial='hidden'
+            whileInView='show'
+            exit='exit'
             className="  flex flex-col  list-none text-White  justify-between mb-8 sm:mb-0 sm:border-l-2 border-b-2 sm:border-b-0 border-White  h-[30vh]  mt-10"
           >
             {NavList.map((list, index) => (
@@ -85,11 +75,11 @@ export default function AppDesktopNavMenu({
               <div className="  flex flex-col gap-5  list-none text-White mb-8 sm:mb-0  mt-10">
                 <AnimatePresence initial={false}>
                   {menuOptions.map((option, index) => (
-                    <div
-                    >
+                    <div>
                       <Link
                         className={`cursor-pointer hover:border-b-2 hover:border-b-BlueLight text-lg p-3 items-center rounded-sm sm:pl-5 transition-all duration-100  `}
                         href={option.path}
+                        key={index}
                       >
                         {option.lable}
                       </Link>

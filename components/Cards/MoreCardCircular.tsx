@@ -20,18 +20,18 @@ export default function MoreCardCircle({
   return (
     <motion.div
       variants={FadeIn("right", "spring", index * 0.5, 0.75)}
-      className=" flex items-center align-middle justify-between"
+      className=" px-5 min-w-[90%] lg:min-w-[33%] flex items-center align-middle justify-between "
     >
       <div className="  flex flex-col items-center gap-5">
-        <div className=" h-52 w-52 rounded-full bg-BlueLight flex flex-col justify-center items-center text-7xl text-White">
+        <div className=" w-[8rem] h-[8rem] lg:h-52 lg:w-52 rounded-full bg-BlueLight flex flex-col justify-center items-center text-4xl lg:text-7xl text-White">
           {Icon}
         </div>
-        <h3 className=" text-2xl text-BlueDark">
+        <h3 className=" text-base lg:text-2xl text-BlueDark">
           <span className=" text-BlueLight">{number}+</span> {lable}
         </h3>
-        <p className=" max-w-[260px]">{description}</p>
+        <p className=" max-w-[360px] text-xs">{description}</p>
       </div>
-      {index !== 2 && <div className=" w-64 h-[1px]  bg-BlueLighter/80"></div>}
+      {index !== 2 && <div className=" w-32 lg:w-64 h-[1px]  bg-BlueLighter/80"></div>}
     </motion.div>
   );
 }

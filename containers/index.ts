@@ -1,4 +1,7 @@
+import ContactUs from "./Home/ContactUs";
 import Hero from "./Home/Hero";
+import Partners from "./Home/Partners";
+import PhotoGallery from "./Home/PhotoGallery";
 import VideoPlayer from "./Home/Video";
 import WhyExibiti from "./Home/WhyExibiti";
 import MoreFacts from "./Home/moreFacts";
@@ -12,4 +15,7 @@ export {
   VideoPlayer,
   WhyExibiti,
   MoreFacts,
+  PhotoGallery,
+  Partners,
+  ContactUs,
 };

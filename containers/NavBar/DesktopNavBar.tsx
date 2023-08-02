@@ -1,3 +1,5 @@
+import { NavVariants, ZoomIn } from "@/utils/motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -20,7 +22,12 @@ const AppDesktopNavBar: React.FC<Props> = ({
   };
 
   return (
-    <div className="md:flex justify-between align-middle items-center hidden gap-5">
+    <motion.div
+      variants={ZoomIn(0,1)}
+      initial="hidden"
+      whileInView="show"
+      className="md:flex justify-between align-middle items-center hidden gap-5"
+    >
       <Image
         src={logoChange ? "/logoBlack.png" : "/logoMain.png"}
         {...commonImageProps}
@@ -45,7 +52,7 @@ const AppDesktopNavBar: React.FC<Props> = ({
           />
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
