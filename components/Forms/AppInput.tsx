@@ -2,7 +2,6 @@ import { InputAdornment, TextField } from "@mui/material";
 import React from "react";
 
 export const AppInput = ({
-  Icon,
   placeholder,
   setValue,
   width = "100%",
@@ -19,11 +18,6 @@ export const AppInput = ({
         id={id}
         fullWidth
         variant="outlined"
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="start">{Icon}</InputAdornment>
-          ),
-        }}
         {...others}
       />
     </div>

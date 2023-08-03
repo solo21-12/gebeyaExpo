@@ -12,7 +12,7 @@ import { AppForm } from "./Forms/AppForm";
 import { AppFormFiled } from "./Forms/AppFormFiled";
 import { AppInput } from "./Forms/AppInput";
 import { AppSubmitButton } from "./Buttons/AppSubmitButton";
-
+import Progress from "./Home/Progress";
 export {
   AppButton,
   AppButtonDefult,
@@ -28,4 +28,5 @@ export {
   AppFormFiled,
   AppInput,
   AppSubmitButton,
+  Progress,
 };

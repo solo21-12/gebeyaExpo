@@ -6,6 +6,8 @@ export default function Pargraph({ lable, className }: Props) {
   return (
     <motion.p
       variants={TextVariant(0.4)}
+      initial="hidden"
+      whileInView='show'
       className={` text-sm lg:text-base max-w-md font-thin ${
         className ? className : "text-BlueDark"
       }`}

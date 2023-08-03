@@ -21,7 +21,7 @@ export default function PhotoGallery({}: Props) {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className=" mb-20 lg:mb-0 lg:h-screen w-[85%] mx-auto lg:items-center flex flex-col lg:flex-row gap-10 lg:justify-between"
+        className=" mb-20 lg:mb-0 lg:h-[80vh] w-[85%] mx-auto lg:items-center flex flex-col lg:flex-row gap-10 lg:justify-between"
       >
         <div className=" flex flex-col gap-4  lg:gap-5">
           <Header lable="Photo Gallery" />

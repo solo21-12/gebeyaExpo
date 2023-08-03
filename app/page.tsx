@@ -2,6 +2,7 @@
 
 import {
   ContactUs,
+  Footer,
   Hero,
   MoreFacts,
   Partners,
@@ -19,7 +20,8 @@ export default function Home() {
       <MoreFacts />
       <PhotoGallery />
       <Partners />
-      <ContactUs/>
+      <ContactUs />
+      <Footer />
     </main>
   );
 }

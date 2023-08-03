@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
 
 import { AppButtonDefult } from "@/components";
 import { HeroData } from "@/constants/homepage";
-import { ZoomIn } from "@/utils/motion";
+import { LogoContainer } from "..";
 type Props = {};
 
 export default function Hero({}: Props) {
@@ -20,18 +19,8 @@ export default function Hero({}: Props) {
     backGroundImage,
   } = HeroData;
   return (
-    <motion.div
-      variants={ZoomIn(0, 1)}
-      initial="hidden"
-      whileInView='show'
-      style={{
-        backgroundImage: `url(${backGroundImage})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        width: "100%",
-        height: "100vh",
-      }}
+    <LogoContainer
+      backGroundImage={backGroundImage}
       className=" h-screen px-[5%] md:px-0 lg:px-0 w-[95%] lg:w-[85%] mx-auto flex md:flex-row flex-col gap-10 justify-center  md:justify-between  items-center"
     >
       <div className=" px-[20px] ">
@@ -70,6 +59,6 @@ export default function Hero({}: Props) {
         handleAction={() => console.log("first")}
         conditionalClass=" block md:hidden w-full mt-10"
       />
-    </motion.div>
+    </LogoContainer>
   );
 }

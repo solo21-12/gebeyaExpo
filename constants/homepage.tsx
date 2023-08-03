@@ -1,4 +1,13 @@
 import { Hero as HeroType } from "@/types/homePage";
+import {
+  BsFacebook,
+  BsFillFlagFill,
+  BsInstagram,
+  BsLinkedin,
+  BsTelegram,
+} from "react-icons/bs";
+import { FiUsers } from "react-icons/fi";
+import { MdPrecisionManufacturing } from "react-icons/md";
 
 export const HeroData: HeroType = {
   smallLable: "Ministry of Urban and Infrastructure Present you",
@@ -105,13 +114,128 @@ export const PartnersData = [
   },
 ];
 
-export const OfficeData = [
+export const OfficeData = {
+  backGroundImage: "/logo-08.png",
+  Data: [
+    {
+      location: "Bole Rwanda,Addis Ababa",
+      phone: ["+2512345678", "+2512345678"],
+    },
+    {
+      location: "Bole Rwanda,Addis Ababa",
+      phone: ["+2512345678", "+2512345678"],
+    },
+  ],
+};
+
+export const MoreFactData = {
+  backGroundImage: "/logo-08.png",
+  Data: [
+    {
+      Icon: <MdPrecisionManufacturing />,
+      number: 180,
+      lable: "Exhibitors",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.Asperiores atque omnis cupiditate inventore quod unde sapiente",
+    },
+    {
+      Icon: <BsFillFlagFill />,
+      number: 30,
+      lable: "Countries",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.Asperiores atque omnis cupiditate inventore quod unde sapiente",
+    },
+    {
+      Icon: <FiUsers />,
+      number: 5000,
+      lable: "Visitors",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.Asperiores atque omnis cupiditate inventore quod unde sapiente",
+    },
+  ],
+};
+
+export const SocialLinks = [
   {
-    location: "Bole Rwanda,Addis Ababa",
-    phone: ["+2512345678", "+2512345678"],
+    Icon: <BsFacebook />,
+    path: "/",
   },
   {
-    location: "Bole Rwanda,Addis Ababa",
-    phone: ["+2512345678", "+2512345678"],
+    Icon: <BsInstagram />,
+    path: "/",
+  },
+  {
+    Icon: <BsLinkedin />,
+    path: "/",
+  },
+  {
+    Icon: <BsTelegram />,
+    path: "/",
   },
 ];
+
+export const FooterLinks = {
+  ExpoName: "GebeyaXpo",
+  year: 2023,
+  Data: [
+    {
+      title: "Useful Links",
+      links: [
+        {
+          name: "Visitor",
+          link: "/visitor/",
+        },
+        {
+          name: "Exibitors",
+          link: "/exibitors/",
+        },
+        {
+          name: "Create",
+          link: "/create/",
+        },
+        {
+          name: "Media & Press",
+          link: "/Media-press/",
+        },
+        {
+          name: "Terms & Services",
+          link: "/terms-and-services/",
+        },
+      ],
+    },
+    {
+      title: "Community",
+      links: [
+        {
+          name: "Help Center",
+          link: "/help-center/",
+        },
+        {
+          name: "Partners",
+          link: "/partners/",
+        },
+        {
+          name: "Blog",
+          link: "/blog/",
+        },
+        {
+          name: "Newsletters",
+          link: "/newsletters/",
+        },
+      ],
+    },
+    {
+      title: "Partner",
+      links: [
+        {
+          name: "Our Partner",
+          link: "/our-partner/",
+        },
+        {
+          name: "Become a Partner",
+          link: "/become-a-partner/",
+        },
+      ],
+    },
+  ],
+};

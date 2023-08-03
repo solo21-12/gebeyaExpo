@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { AppNavBar } from ".";
+import { AppNavBar } from "..";
 
 type Props = {
   children: React.ReactNode;

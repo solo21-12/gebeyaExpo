@@ -1,9 +1,9 @@
 import React from "react";
 import { ErrorMesssage } from "./ErrorMesssage";
-import {  AppInput } from "./AppInput";
+import { AppInput } from "./AppInput";
 import { FormikValues, useFormikContext } from "formik";
 
-export const AppFormFiled = ({ Icon, name, ...others }: any) => {
+export const AppFormFiled = ({ name, ...others }: any) => {
   const { handleChange, setFieldTouched, errors, touched } =
     useFormikContext<FormikValues>();
 
@@ -12,7 +12,6 @@ export const AppFormFiled = ({ Icon, name, ...others }: any) => {
       <AppInput
         setValue={handleChange(name)}
         onBlur={() => setFieldTouched(name)}
-        Icon={Icon}
         id={name}
         {...others}
       />
