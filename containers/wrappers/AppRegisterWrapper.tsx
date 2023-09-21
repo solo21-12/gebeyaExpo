@@ -29,7 +29,7 @@ const RegisterWrapper: React.FC<Props> = ({
   const { error, message, progress, setSubmit, submit, submitForm } = useAPI();
 
   return (
-    <div className="  min-h-[50vh] flex flex-col ">
+    <div className="  min-h-[100vh] flex flex-col ">
       <AppForm
         initialValues={initialValues}
         onSubmit={(values: FormikValues) => submitForm(values, URL, type)}
