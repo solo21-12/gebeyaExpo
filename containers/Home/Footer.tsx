@@ -13,10 +13,7 @@ type Props = {};
 export default function Footer({}: Props) {
   const { Data, ExpoName, year } = FooterLinks;
   return (
-    <motion.section
-      variants={FooterVariants}
-      initial="hidden"
-      whileInView="show"
+    <section
       className={`flex justify-center items-center sm:py-5 py-6 flex-col px-10 bg-BlueDark rounded-tl-[3rem] rounded-tr-[3rem] mt-10`}
     >
       <div
@@ -77,6 +74,6 @@ export default function Footer({}: Props) {
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

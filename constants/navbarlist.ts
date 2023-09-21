@@ -10,15 +10,15 @@ export const NavList: NavListType[] = [
     options: [
       {
         lable: "Exibitor request",
-        path: "/",
+        path: "/exhibitor-register",
       },
       {
         lable: "Exhibitors list",
-        path: "/",
+        path: "/exhibitor-public",
       },
       {
         lable: "Exhibitors Portal",
-        path: "/",
+        path: "/exhibitor-portal",
       },
     ],
   },
@@ -27,15 +27,11 @@ export const NavList: NavListType[] = [
     options: [
       {
         lable: "Media badge request",
-        path: "/",
+        path: "/media-badge-request",
       },
       {
         lable: "Media list",
-        path: "/",
-      },
-      {
-        lable: "Press release",
-        path: "/",
+        path: "/media-list",
       },
     ],
   },
@@ -44,11 +40,11 @@ export const NavList: NavListType[] = [
     options: [
       {
         lable: "Visitor badge request",
-        path: "/",
+        path: "/visitor-register",
       },
       {
         lable: "Schedule Meetings",
-        path: "/",
+        path: "/book-meeting",
       },
     ],
   },

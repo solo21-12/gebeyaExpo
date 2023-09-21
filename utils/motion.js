@@ -14,12 +14,12 @@ export const NavVariants = {
     transition: {
       type: "tween",
       stiffness: 80,
-      duration:1
+      duration: 1,
     },
   },
   exit: {
     y: -200,
-    opacity:0,
+    opacity: 0,
     transition: {
       type: "spring",
       stiffness: 80,
@@ -164,6 +164,18 @@ export const FooterVariants = {
       type: "spring",
       stiffness: 80,
       delay: 0.5,
+    },
+  },
+};
+
+export const Opacity = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 1,
     },
   },
 };

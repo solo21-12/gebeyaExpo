@@ -18,7 +18,7 @@ export default function Sponsor({ isOpen }: Props) {
           variants={NavVariants}
           initial="hidden"
           whileInView="show"
-          className=" flex flex-col md:flex-row justify-between mt-48 md:mt-20 px-10 text-White"
+          className=" flex flex-col md:flex-row justify-between mt-48 md:mt-20 px-5 text-White"
         >
           <div className=" md:w-[50%] leading-6">
             <h3 className=" text-2xl font-bold">Our Officess</h3>

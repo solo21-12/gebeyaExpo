@@ -1,37 +1,50 @@
 import { useFormikContext } from "formik";
 import AppButton from "./AppButton";
-import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 
 interface App {
   title: string;
-  icon?: boolean;
+  iconOnly?: boolean;
   setProcess: (val: boolean) => void;
-  setComplete: (val: boolean) => void;
+  setError: Dispatch<SetStateAction<boolean>>;
+  Icon?: ReactNode;
+  disabled?: boolean;
 }
 export const AppSubmitButton = ({
   title,
-  icon,
-  setComplete,
+  iconOnly,
   setProcess,
+  setError,
+  Icon,
+  disabled,
 }: App) => {
-  const { handleSubmit } = useFormikContext();
+  const { handleSubmit, isValid, dirty } = useFormikContext();
   const handleClick = () => {
-    setProcess(true);
-    setTimeout(() => {
-      setComplete(true);
-    }, 1000);
-    handleSubmit();
+    if (dirty && isValid) {
+      setProcess(true);
+      setError(false);
+      handleSubmit();
+    } else {
+      setError(true);
+    }
   };
 
   return (
     <div>
-      {icon ? (
-        <BsFillArrowRightCircleFill
+      {iconOnly ? (
+        <div
           className="text-BlueLighter text-4xl cursor-pointer"
           onClick={handleClick}
-        />
+        >
+          {Icon}
+        </div>
       ) : (
-        <AppButton label={title} handleAction={handleClick} />
+        <AppButton
+          label={title}
+          handleAction={handleClick}
+          Icon={Icon}
+          disabled={disabled}
+        />
       )}
     </div>
   );

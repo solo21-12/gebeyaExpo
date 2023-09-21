@@ -14,8 +14,9 @@ export default function AppButtonDefult({
 }: Props) {
   return (
     <motion.button
-    variants={ZoomIn(0,0.4)}
-      className={` bg-BlueLighter rounded-lg text-White px-7 py-3 mt-4 ${conditionalClass}`}
+      variants={ZoomIn(0, 0.4)}
+      className={` bg-BlueLighter hover:bg-BlueLighter/90 rounded-lg text-White  px-2 xl:px-7 py-3 mt-4 text-xs ${conditionalClass}`}
+      onClick={handleAction}
     >
       {label}
     </motion.button>

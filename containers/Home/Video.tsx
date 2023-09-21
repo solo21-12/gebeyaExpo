@@ -14,12 +14,7 @@ const YourComponent: React.FC = () => {
   };
 
   return (
-    <motion.div
-      variants={ZoomIn(0, 1.5)}
-      initial="hidden"
-      whileInView="show"
-      className="relative w-full h-[80vh]  mb-20"
-    >
+    <div className="relative w-full h-[80vh]  mb-20">
       {isPopupOpen ? (
         <VideoPopup isOpen={isPopupOpen} videoId={videoId} />
       ) : (
@@ -47,7 +42,7 @@ const YourComponent: React.FC = () => {
           </div>
         </div>
       )}
-    </motion.div>
+    </div>
   );
 };
 

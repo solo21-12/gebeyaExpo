@@ -19,10 +19,7 @@ export default function MoreCardCircle({
   index,
 }: Props) {
   return (
-    <motion.div
-      variants={FadeIn("right", "spring", index * 0.5, 0.75)}
-      className=" px-5 min-w-[90%] lg:min-w-[33%] flex items-center align-middle justify-between "
-    >
+    <div className=" px-5 min-w-[90%] lg:min-w-[33%] flex items-center align-middle justify-between ">
       <div className="  flex flex-col items-center gap-5">
         <div className=" w-[8rem] h-[8rem] lg:h-52 lg:w-52 rounded-full bg-BlueLight flex flex-col justify-center items-center text-4xl lg:text-7xl text-White">
           {Icon}
@@ -32,7 +29,9 @@ export default function MoreCardCircle({
         </h3>
         <p className=" max-w-[360px] text-xs">{description}</p>
       </div>
-      {index !== 2 && <div className=" w-32 lg:w-64 h-[1px]  bg-BlueLighter/80"></div>}
-    </motion.div>
+      {index !== 2 && (
+        <div className=" w-32 lg:w-64 h-[1px]  bg-BlueLighter/80"></div>
+      )}
+    </div>
   );
 }

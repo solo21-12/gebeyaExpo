@@ -7,9 +7,12 @@ import VideoPlayer from "./Home/Video";
 import WhyExibiti from "./Home/WhyExibiti";
 import MoreFacts from "./Home/moreFacts";
 import AppNavBar from "./NavBar";
-import LogoContainer from "./wrappers/LogoContainer";
-import AppSliderWrapper from "./wrappers/SliderWrapper";
+import LogoContainer from "./wrappers/AppLogoContainer";
+import AppSliderWrapper from "./wrappers/AppSliderWrapper";
+import AppAuthWrapper from "./wrappers/AppAuthWrapper";
+import RegisterWrapper from "./wrappers/AppRegisterWrapper";
 export {
+  AppAuthWrapper,
   AppNavBar,
   AppSliderWrapper,
   ContactUs,
@@ -18,6 +21,7 @@ export {
   LogoContainer,
   MoreFacts,
   PhotoGallery,
+  RegisterWrapper,
   Partners,
   WhyExibiti,
   VideoPlayer,

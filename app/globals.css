@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-
 *::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  *::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 2px;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: transparenty;
-  }
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #0878ab;
+  border: 0.2px solid  transparent;
+  border-radius: 14px;
+ 
+}
+
+

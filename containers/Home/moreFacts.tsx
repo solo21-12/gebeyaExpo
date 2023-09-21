@@ -13,12 +13,7 @@ export default function MoreFacts({}: Props) {
 
   return (
     <LogoContainer backGroundImage={backGroundImage}>
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-        className=" mb-20 lg:mb-0 lg:h-[80vh] w-[85%] mx-auto"
-      >
+      <div className=" mb-20 lg:mb-0 lg:h-[80vh] w-[85%] mx-auto">
         <Header lable={"More Facts About"} />
         <Header lable={"GebeyaXpo"} className="text-BlueLight" />
         <Pargraph
@@ -31,7 +26,7 @@ export default function MoreFacts({}: Props) {
             <MoreCardCircle Item={item} index={index} key={index} />
           ))}
         </div>
-      </motion.div>
+      </div>
     </LogoContainer>
   );
 }

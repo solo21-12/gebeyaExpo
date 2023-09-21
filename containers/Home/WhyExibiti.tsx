@@ -1,6 +1,6 @@
 "use client";
 
-import { Header, MoreCard, Pargraph, WhyExibitCard } from "@/components";
+import { Header, AppMoreCard, Pargraph, WhyExibitCard } from "@/components";
 import { WhyExibitData } from "@/constants/homepage";
 import styles from "@/styles";
 import { staggerContainer } from "@/utils/motion";
@@ -37,7 +37,7 @@ export default function WhyExibiti({}: Props) {
               handleClick={setActive}
             />
           ))}
-          <MoreCard index={4} handleClick={() => console.log("first")} />
+          <AppMoreCard index={4} handleClick={() => console.log("first")} />
         </div>
       </motion.div>
     </div>

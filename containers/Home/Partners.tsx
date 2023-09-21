@@ -9,12 +9,7 @@ type Props = {};
 export default function Partners({}: Props) {
   return (
     <section id="partners">
-      <motion.div
-        variants={ZoomIn(0, 1.5)}
-        initial="hidden"
-        whileInView="show"
-        className=" lg:w-[85%] mx-auto"
-      >
+      <div className=" lg:w-[85%] mx-auto">
         <Header
           lable="We’re working with hundreds of amazing people"
           className=" px-10 text-BlueDark"
@@ -25,7 +20,7 @@ export default function Partners({}: Props) {
             <PartnersCard key={index} index={index} partner={partner} />
           ))}
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

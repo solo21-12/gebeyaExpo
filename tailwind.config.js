@@ -19,7 +19,11 @@ module.exports = {
         BlueLighter: "#0878ab",
         BluePurple: "#8d80d5",
         White: "#e6f1ff",
+        GrayWHite: "#f2f2f2",
       },
+      screens:{
+        'xs':'600px'
+      }
     },
   },
   plugins: [],

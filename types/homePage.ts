@@ -8,3 +8,9 @@ export type Hero = {
   backGroundImage:string
 };
 
+
+export interface Sex {
+  label: string;
+  value: string;
+}
+

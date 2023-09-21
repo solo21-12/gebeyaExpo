@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { AppNavBar } from "..";
+import { AppNavBar, Footer } from "..";
 
 type Props = {
   children: React.ReactNode;
@@ -51,6 +51,7 @@ export default function AppSliderWrapper({ children }: Props) {
         }`}
       >
         {children}
+        <Footer />
       </div>
     </div>
   );

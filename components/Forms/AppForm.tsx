@@ -1,9 +1,9 @@
-import { Formik } from "formik";
+import { Formik, FormikValues } from "formik";
 import React, { ReactNode } from "react";
 
 interface AppFormProps {
-  initialValues: any;
-  onSubmit: (values: any) => void;
+  initialValues: FormikValues;
+  onSubmit: (values: FormikValues) => void;
   validationSchema: any;
   children: ReactNode;
 }

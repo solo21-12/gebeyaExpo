@@ -1,4 +1,3 @@
-
 import React from "react";
 
 export const ErrorMesssage = ({ error, visible }: any) => {
@@ -6,4 +5,3 @@ export const ErrorMesssage = ({ error, visible }: any) => {
 
   return <p className=" text-red-600 text-sm">{error}</p>;
 };
-

@@ -15,6 +15,7 @@ type Props = {
   handleClick: (index: number) => void;
   selectedElement: string;
   active: number;
+  setIsOpen: (val: boolean) => void;
 };
 
 export default function AppDesktopNavMenu({
@@ -23,6 +24,7 @@ export default function AppDesktopNavMenu({
   handleClick,
   menuOptions,
   selectedElement,
+  setIsOpen,
 }: Props) {
   return (
     <AnimatePresence>
@@ -30,9 +32,9 @@ export default function AppDesktopNavMenu({
         <div className="  justify-between hidden md:flex">
           <motion.div
             variants={NavVariants}
-            initial='hidden'
-            whileInView='show'
-            exit='exit'
+            initial="hidden"
+            whileInView="show"
+            exit="exit"
             className="  flex flex-col  list-none text-White  justify-between mb-8 sm:mb-0 sm:border-l-2 border-b-2 sm:border-b-0 border-White  h-[30vh]  mt-10"
           >
             {NavList.map((list, index) => (
@@ -79,7 +81,8 @@ export default function AppDesktopNavMenu({
                       <Link
                         className={`cursor-pointer hover:border-b-2 hover:border-b-BlueLight text-lg p-3 items-center rounded-sm sm:pl-5 transition-all duration-100  `}
                         href={option.path}
-                        key={index}
+                        key={index + 100}
+                        onClick={() => setIsOpen(false)}
                       >
                         {option.lable}
                       </Link>

@@ -2,7 +2,7 @@
 import React from "react";
 import { Pargraph } from "..";
 import { motion } from "framer-motion";
-import { PlanetVariants, slideIn } from "@/utils/motion";
+import { slideIn } from "@/utils/motion";
 
 type Props = {
   partner: {

@@ -1,12 +1,10 @@
 "use client";
 
 import React, { Dispatch, SetStateAction, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { NavList } from "@/constants/navbarlist";
 import { Options } from "@/types/navbarlist";
-import { motion, AnimatePresence } from "framer-motion";
 import AppMobileNavMenu from "./MobileMenu";
 import AppDesktopNavMenu from "./DesktopMenu";
 
@@ -40,6 +38,7 @@ export default function AppNavMenu({ isOpen, setIsOpen }: Props) {
         handleClick={handleClick}
         selectedElement={selectedElement}
         active={active}
+        setIsOpen={setIsOpen}
       />
       <AppDesktopNavMenu
         isOpen={isOpen}
@@ -47,6 +46,7 @@ export default function AppNavMenu({ isOpen, setIsOpen }: Props) {
         handleClick={handleClick}
         selectedElement={selectedElement}
         active={active}
+        setIsOpen={setIsOpen}
       />
     </div>
   );

@@ -8,7 +8,7 @@ export default function Header({ lable, className }: Props) {
   return (
     <motion.h1
       variants={TextVariant(0.4)}
-      className={` text-3xl lg:text-5xl max-w-lg font-semibold ${
+      className={` text-3xl lg:text-5xl max-w-lg font-semibold capitalize ${
         className ? className : "text-BlueDark"
       }`}
     >

@@ -14,6 +14,7 @@ type Props = {
   handleClick: (index: number) => void;
   selectedElement: string;
   active: number;
+  setIsOpen: (val: boolean) => void;
 };
 
 export default function AppMobileNavMenu({
@@ -22,6 +23,7 @@ export default function AppMobileNavMenu({
   handleClick,
   selectedElement,
   active,
+  setIsOpen,
 }: Props) {
   return (
     <AnimatePresence>
@@ -35,7 +37,7 @@ export default function AppMobileNavMenu({
             className="  flex flex-col  list-none text-White  justify-between mb-8 sm:mb-0 md:border-l-2  md:border-b-0 md:border-White  h-[30vh]  mt-10 pb-5"
           >
             {NavList.map((list, index) => (
-              <div key={index}>
+              <div key={list.lable}>
                 <li
                   className={`cursor-pointer  hover:border-b-2 hover:border-b-BlueLight text-xl p-3 items-center rounded-sm sm:pl-5 w-[80%]  ${
                     active == index
@@ -51,7 +53,7 @@ export default function AppMobileNavMenu({
                     <AnimatePresence initial={false}>
                       {menuOptions.map((option, index) => (
                         <motion.div
-                          key={option.lable}
+                          key={index}
                           initial={{ opacity: 0, x: -40 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.3 }}
@@ -59,6 +61,7 @@ export default function AppMobileNavMenu({
                           <Link
                             className={`cursor-pointer hover:border-b-2 hover:border-b-BlueLight text-base items-center rounded-sm    `}
                             href={option.path}
+                            onClick={() => setIsOpen(false)}
                           >
                             {option.lable}
                           </Link>

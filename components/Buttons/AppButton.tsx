@@ -1,16 +1,27 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { ReactNode } from "react";
 type Props = {
   label: string;
   handleAction: () => void;
+  Icon?: ReactNode;
+  disabled?: boolean;
 };
 
-export default function AppButton({ handleAction, label }: Props) {
+export default function AppButton({
+  handleAction,
+  label,
+  Icon,
+  disabled,
+}: Props) {
   return (
-    <Button variant="outlined" onClick={handleAction}   sx={{
-      mt:3
-    }}>
+    <Button
+      variant="outlined"
+      onClick={handleAction}
+      disabled={disabled}
+      className="bg-BlueLighter hover:bg-BlueLighter/90 disabled:bg-BlueLighter/70 disabled:cursor-not-allowed rounded-lg text-White  px-2 xl:px-7 py-3 text-xs mt-4 flex gap-2"
+    >
       {label}
+      {Icon}
     </Button>
   );
 }

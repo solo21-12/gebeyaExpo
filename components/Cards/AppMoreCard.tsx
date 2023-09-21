@@ -8,7 +8,7 @@ type Props = {
   handleClick: () => void;
 };
 
-export default function MoreCard({ handleClick, index }: Props) {
+export default function AppMoreCard({ handleClick, index }: Props) {
   return (
     <motion.div
       variants={FadeIn("right", "spring", index * 0.5, 0.75)}

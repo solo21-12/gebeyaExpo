@@ -1,15 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as Yup from "yup";
-import {
-  BsFillArrowRightCircleFill,
-  BsFillTelephoneFill,
-} from "react-icons/bs";
+import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoLocationSharp } from "react-icons/io5";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 import {
   AppForm,
-  AppFormFiled as AppFormField,
+  AppFormField,
   AppSubmitButton,
   Header,
   Pargraph,
@@ -19,16 +17,20 @@ import { OfficeData } from "@/constants/homepage";
 import { LogoContainer } from "..";
 import { motion } from "framer-motion";
 import { textContainer } from "@/utils/motion";
+import { FormikValues } from "formik";
+import { useAPI } from "@/hooks";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
 });
+const initialValues: FormikValues = { email: "" };
+
+const { Data, backGroundImage } = OfficeData;
 
 export default function ContactUs() {
-  const [progress, setProgress] = useState<boolean>(false);
-  const [submit, setSubmit] = useState<boolean>(false);
+  const URL = process.env.NEXT_PUBLIC_NEWSLETTER_REGISTER_URL as string;
 
-  const { Data, backGroundImage } = OfficeData;
+  const { submitForm, submit, progress, setSubmit, message, error } = useAPI();
   return (
     <LogoContainer
       backGroundImage={backGroundImage}
@@ -42,10 +44,7 @@ export default function ContactUs() {
       >
         <div className=" flex flex-col gap-5 md:w-[60%]">
           {submit ? (
-            <Progress
-              process={progress}
-              message="Thank you for signing up you!"
-            />
+            <Progress process={progress} error={error} message={message} />
           ) : (
             <>
               <Header
@@ -54,13 +53,12 @@ export default function ContactUs() {
               />
               <Pargraph lable="Subscribe to get the latest expo news, articles, and resources." />
               <AppForm
-                initialValues={{ email: "" }}
-                onSubmit={(values: any) => console.log(values)}
+                initialValues={initialValues}
+                onSubmit={(values: FormikValues) => submitForm(values, URL)}
                 validationSchema={validationSchema}
               >
                 <div className=" flex gap-2 items-center align-middle">
                   <AppFormField
-                    placeholder="Email"
                     required
                     name="email"
                     className=" mb-2 flex-1 lg:min-w-[400px]"
@@ -68,9 +66,10 @@ export default function ContactUs() {
                   />
                   <AppSubmitButton
                     title={"Submit"}
-                    icon={true}
-                    setComplete={setProgress}
+                    iconOnly={true}
+                    Icon={<BsFillArrowRightCircleFill />}
                     setProcess={setSubmit}
+                    setError={() => {}}
                   />
                 </div>
               </AppForm>

@@ -21,7 +21,6 @@ export default function Home() {
       <PhotoGallery />
       <Partners />
       <ContactUs />
-      <Footer />
     </main>
   );
 }
