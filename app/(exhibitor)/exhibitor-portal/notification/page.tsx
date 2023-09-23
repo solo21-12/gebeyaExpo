@@ -1,80 +1,170 @@
-'use client'
-import { useExhibitorPortalContext } from "@/context/ExhibitorPortalContext";
-import { FadeIn } from "@/utils/motion";
-import { CircularProgress } from "@mui/material";
-import { motion } from "framer-motion";
+"use client";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { CircularProgress, Menu, MenuItem } from "@mui/material";
+import { useExhibitorPortalContext } from "@/context/ExhibitorPortalContext";
+import { AppMenuItemContent, AppNotificationItem } from "@/components";
 import { Notification } from "@/types/exhibitor";
-import React from "react";
-import { textCliper } from "@/utils";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-const page = () => {
-  const { notification, currentUser, setNotification } =
+const Page = () => {
+  const { notification, currentUser, setNotification, setCurrentUser } =
     useExhibitorPortalContext();
-  const router = useRouter();
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const [currentNotification, setCurrentNotification] =
+    useState<Notification | null>(null);
 
-  const handleClick = (Currentnotification: Notification) => {
-    router.push(`/exhibitor-portal/notification/${Currentnotification.id}`);
-    if (!Currentnotification.seen) {
-      let newNotification = notification.filter(
-        (item) => item.id === Currentnotification.id
-      );
-      let newNotification2 = notification.filter(
-        (item) => item.id !== Currentnotification.id
-      );
-      newNotification[0].seen = true;
-      setNotification([...newNotification, ...newNotification2]);
+  const router = useRouter();
+  const open = Boolean(anchorEl);
+
+  const handleClick = (
+    event: React.MouseEvent<HTMLButtonElement>,
+    notification: Notification
+  ) => {
+    setAnchorEl(event.currentTarget);
+    setCurrentNotification(notification);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleDelete = (id: string | number | undefined) => {
+    const updatedNotifications = notification.filter((n) => n.id !== id);
+    setNotification(updatedNotifications);
+    handleClose();
+    if (updatedNotifications.length === 0) {
+      setCurrentUser((prevUser) => ({
+        ...prevUser,
+        notificationCount: 0,
+      }));
     }
   };
+
+  const handleMarkAsRead = (id: string | number | undefined) => {
+    const updatedNotifications = notification.map((n) =>
+      n.id === id ? { ...n, seen: true } : n
+    );
+    setNotification(updatedNotifications);
+    handleClose();
+  };
+
+  const handleMarkAsUnRead = (id: string | number | undefined) => {
+    const updatedNotifications = notification.map((n) =>
+      n.id === id ? { ...n, seen: false } : n
+    );
+    setNotification(updatedNotifications);
+    handleClose();
+  };
+
+  const navigateToNotificationPage = (notificationId: string | number) => {
+    router.push(`/exhibitor-portal/notification/${notificationId}`);
+  };
+
+  const handleRouter = (currentNotification: Notification) => {
+    const { id, seen } = currentNotification;
+
+    // Navigate to the notification page
+    navigateToNotificationPage(id);
+
+    if (!seen) {
+      // Find the current notification in the array
+      const updatedNotificationIndex = notification.findIndex(
+        (item) => item.id === id
+      );
+
+      if (updatedNotificationIndex !== -1) {
+        // Create a new array with the updated notification
+        const updatedNotifications = [
+          ...notification.slice(0, updatedNotificationIndex),
+          { ...currentNotification, seen: true },
+          ...notification.slice(updatedNotificationIndex + 1),
+        ];
+
+        // Update the notification state
+        setNotification(updatedNotifications);
+      }
+    }
+  };
+
   return (
-    <div className=" xs:ml-[130px]  md:ml-[290px]">
-      <div className="">
+    <div className="xs:ml-[130px] md:ml-[290px]">
+      <div>
         {currentUser.notificationCount > 0 ? (
           notification.length > 0 ? (
-            <div className=" mt-32 h-[80vh] border-l-2 border-l-BlueLighter  overflow-y-auto flex flex-col gap-5">
+            <div className="mt-32 h-[80vh] border-l-2 border-l-BlueLighter overflow-y-auto flex flex-col gap-2">
               {notification.map((item) => (
-                <motion.div
-                  variants={FadeIn("up", "", 0, 1)}
-                  initial="hidden"
-                  whileInView="show"
+                <AppNotificationItem
+                  notification={item}
+                  openModal={handleClick}
+                  handleRouter={handleRouter}
                   key={item.id}
-                  onClick={() => handleClick(item)}
-                  className={` bg-BlueLighter ${
-                    item.seen ? "bg-opacity-10" : "bg-opacity-30"
-                  } w-[90%] md:w-[80%] xl:w-[50%] ml-5  cursor-pointer hover:translate-x-2 transition-transform transform ease-in-out duration-200 rounded-lg box-border p-5 flex flex-col gap-1`}
-                >
-                  <h3 className=" text-base lg:text-2xl font-bold text-BlueDark ">
-                    {item.title}
-                    {!item.seen && (
-                      <sup className={`ml-2  bg-teal-400 px-1 rounded-sm`}>
-                        New
-                      </sup>
-                    )}
-                  </h3>
-                  <p className=" text-sm lg:text-base text-gray-600 font-medium">
-                    {textCliper(item.description)}
-                  </p>
-                  <p className=" uppercase text-xs lg:text-sm">{item.date}</p>
-                </motion.div>
+                />
               ))}
             </div>
           ) : (
-            <div className=" h-screen flex flex-col justify-center items-center">
+            <div className="h-screen flex flex-col justify-center items-center">
               <CircularProgress />
             </div>
           )
         ) : (
-          <div className=" flex flex-col justify-center items-center h-screen">
+          <div className="flex flex-col justify-center items-center h-screen">
             <div className="lg:w-[45%] w-[90%] md:w-[75%] mx-auto border-dashed border-2 h-[50vh] p-10 flex flex-col items-center justify-center">
-              <h3 className=" text-base lg:text-2xl text-gray-400 font-bold">
+              <h3 className="text-base lg:text-2xl text-gray-400 font-bold">
                 You don't have any notifications yet
               </h3>
             </div>
           </div>
         )}
       </div>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
+      >
+        <MenuItem onClick={() => handleDelete(currentNotification?.id)}>
+          <AppMenuItemContent
+            icon={<RiDeleteBin6Line className="text-2xl text-red-500" />}
+            title="Delete"
+            description="Delete this notification"
+          />
+        </MenuItem>
+        {currentNotification && (
+          <MenuItem
+            onClick={
+              currentNotification.seen
+                ? () => handleMarkAsUnRead(currentNotification.id)
+                : () => handleMarkAsRead(currentNotification.id)
+            }
+          >
+            <AppMenuItemContent
+              icon={
+                currentNotification.seen ? (
+                  <AiOutlineEyeInvisible className="text-2xl text-BlueLighter" />
+                ) : (
+                  <AiOutlineEye className="text-2xl text-BlueLighter" />
+                )
+              }
+              title={
+                currentNotification.seen ? "Mark as unread" : "Mark as read"
+              }
+              description={
+                currentNotification.seen
+                  ? "Mark this notification as unseen"
+                  : "Mark this notification as seen"
+              }
+            />
+          </MenuItem>
+        )}
+      </Menu>
+      ;
     </div>
   );
 };
 
-export default page;
+export default Page;

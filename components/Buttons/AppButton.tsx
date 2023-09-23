@@ -1,4 +1,5 @@
-import { Button } from "@mui/material";
+
+import Button from "@mui/joy/Button";
 import React, { ReactNode } from "react";
 type Props = {
   label: string;
@@ -15,7 +16,8 @@ export default function AppButton({
 }: Props) {
   return (
     <Button
-      variant="outlined"
+      variant="soft"
+      size="sm"
       onClick={handleAction}
       disabled={disabled}
       className="bg-BlueLighter hover:bg-BlueLighter/90 disabled:bg-BlueLighter/70 disabled:cursor-not-allowed rounded-lg text-White  px-2 xl:px-7 py-3 text-xs mt-4 flex gap-2"
