@@ -20,7 +20,7 @@ export default function AppButton({
       size="sm"
       onClick={handleAction}
       disabled={disabled}
-      className="bg-BlueLighter hover:bg-BlueLighter/90 disabled:bg-BlueLighter/70 disabled:cursor-not-allowed rounded-lg text-White  px-2 xl:px-7 py-3 text-xs mt-4 flex gap-2"
+      className="bg-BlueLighter hover:bg-BlueLighter/90 disabled:bg-BlueLighter/70 disabled:cursor-not-allowed rounded-lg text-White  px-2 xl:px-7 py-1 text-xs flex gap-2"
     >
       {label}
       {Icon}

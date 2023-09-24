@@ -24,14 +24,15 @@ import AppEditor from "./Forms/AppEditor";
 import AppTeamAdderDesktop from "./Forms/AppTeamAdderDesktop";
 import AppTeamAdderMobile from "./Forms/AppTeamAdderMobile";
 import AppTeamLister from "./Dashboard/AppTeamLister";
-import AppTeamEditorDesktop from "./Dashboard/AppTeamEditorDesktop";
 import AppTeamEditorMobile from "./Dashboard/AppTeamEditorMobile";
 import AppNotification from "./Cards/AppNotification";
 import AppNotificationItem from "./Cards/AppNotificationItem";
 import AppMenuItemContent from "./Cards/AppMenuItemContent";
 import AppTeamEditor from "./Forms/AppTeamEditor";
 import AppImageUploader from "./Forms/AppImageUploader";
+import AppSearchInput from "./Dashboard/AppSearchInput";
 export {
+  AppSearchInput,
   AppImageUploader,
   AppTeamEditor,
   AppMenuItemContent,
@@ -42,7 +43,6 @@ export {
   AppButtonDefult,
   AppTeamEditorMobile,
   AppSidebar,
-  AppTeamEditorDesktop,
   AppListItem,
   AppLoginForm,
   AppTeamAdderDesktop,
