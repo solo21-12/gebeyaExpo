@@ -53,6 +53,8 @@ const AppTeamLister: FC<Props> = ({ teams, openModal }) => {
             borderRadius: "sm",
             p: 2,
             listStyle: "none",
+            // Add a minimum height of 250px to each grid item
+            maxHeight: "300px",
           }}
         >
           <div className="flex justify-between items-center">

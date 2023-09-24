@@ -125,7 +125,7 @@ const AppSidebar: FC<Props> = ({ window, menuItems }) => {
         </Drawer>
         <Drawer
           variant="permanent"
-          className=" w-[250px] xs:w-[80px] md:w-[250px]"
+          className=" w-[250px] xs:w-[80px] lg:w-[250px]"
           sx={{
             display: { xs: "none", sm: "block" },
             "& .MuiDrawer-paper": {

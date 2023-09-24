@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, {
   FC,
@@ -24,6 +24,10 @@ type Context = {
   setCurrentUser: Dispatch<SetStateAction<ExhibitorsDataType>>;
   notification: Notification[];
   setNotification: Dispatch<SetStateAction<Notification[]>>;
+  editing: boolean;
+  setEditing: Dispatch<SetStateAction<boolean>>;
+  adding: boolean;
+  setAdding: Dispatch<SetStateAction<boolean>>;
 };
 
 export const PortalContext = createContext<Context | undefined>(undefined);
@@ -33,6 +37,8 @@ const ExhibitorPortalContext: FC<Props> = ({ children }) => {
     ExhibitorsData[0]
   );
   const [notification, setNotification] = useState<Notification[]>([]);
+  const [editing, setEditing] = useState<boolean>(false);
+  const [adding, setAdding] = useState<boolean>(false);
 
   useEffect(() => {
     const currentUserNotification = NotificationData.filter(
@@ -46,6 +52,10 @@ const ExhibitorPortalContext: FC<Props> = ({ children }) => {
     setCurrentUser,
     notification,
     setNotification,
+    editing,
+    setAdding,
+    setEditing,
+    adding,
   };
 
   return (

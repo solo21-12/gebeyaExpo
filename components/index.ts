@@ -29,7 +29,11 @@ import AppTeamEditorMobile from "./Dashboard/AppTeamEditorMobile";
 import AppNotification from "./Cards/AppNotification";
 import AppNotificationItem from "./Cards/AppNotificationItem";
 import AppMenuItemContent from "./Cards/AppMenuItemContent";
+import AppTeamEditor from "./Forms/AppTeamEditor";
+import AppImageUploader from "./Forms/AppImageUploader";
 export {
+  AppImageUploader,
+  AppTeamEditor,
   AppMenuItemContent,
   AppButton,
   AppNotification,

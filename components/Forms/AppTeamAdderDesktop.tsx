@@ -1,93 +1,77 @@
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, { FC } from "react";
+import Box from "@mui/joy/Box";
+import Typography from "@mui/joy/Typography";
+import IconButton from "@mui/joy/IconButton";
+import Divider from "@mui/joy/Divider";
+import Sheet from "@mui/joy/Sheet";
+import CloseIcon from "@mui/icons-material/Close";
 import { Field } from "@/types/register";
-import { AiOutlineDelete } from "react-icons/ai";
-
-import { AppButton, AppFormField } from "..";
-import { Button, Modal, Stack } from "@mui/material";
+import { FormikValues } from "formik";
+import { AppButton, AppFormField, AppImageUploader } from "..";
 import { useTeamAdder } from "@/hooks";
 
 type Props = {
+  setEditing: (editing: boolean) => void;
   fields: Field[];
-  setOpenModal: Dispatch<SetStateAction<boolean>>;
-  openModal: boolean;
+  initialValues: FormikValues;
 };
 
-const AppTeamAdderDesktop: FC<Props> = ({
-  fields,
-  openModal,
-  setOpenModal,
-}) => {
-  const {
-    handleAddMoreMembers,
-    handleDiscard,
-    handleRemove,
-    handleSave,
-    tempoTeams,
-    dirty,
-    isValid,
-    values,
-  } = useTeamAdder({ setOpenModal: setOpenModal });
+const AppTeamAdderDesktop: FC<Props> = ({ setEditing, fields }) => {
+  const { handleDiscard, handleSave, dirty, isValid,handleAddMoreMembers,values } = useTeamAdder();
 
   return (
-    <Modal
-      open={openModal}
-      className=" items-center hidden md:flex flex-col justify-center "
-    >
-      <div className=" bg-BlueDark h-[60vh] w-[100%] md:w-[89%] 2xl:w-[60%] mx-auto">
-        <div className=" bg-white  rounded-t-[3rem]  rounded-b-md w-full h-full mt-2 flex flex-col  justify-center gap-5">
-          <h3 className=" text-xs md:text-base text-BlueLight font-bold  uppercase w-[90%] text-center mx-auto ">
-            Add Your Team members
-          </h3>
-          {tempoTeams.length > 0 && (
-            <Stack
-              direction="row"
-              rowGap={2}
-              className=" flex gap-10 w-[90%] mx-auto  overflow-x-scroll px-5 py-3"
-            >
-              {tempoTeams.map((team) => (
-                <Button
-                  className={` ${team.bgColor}  bg-BlueLight  flex-shrink-0 text-xs text-White px-5 rounded-lg `}
-                  endIcon={
-                    <AiOutlineDelete
-                      className=" text-xl text-red-500 font-bold"
-                      onClick={() => handleRemove(team)}
-                    />
-                  }
-                  key={team.id}
-                >
-                  {team.firstName}
-                </Button>
-              ))}
-            </Stack>
-          )}
-          <div className=" flex flex-wrap gap-5 w-[90%] mx-auto items-center justify-center">
-            {fields.map((item) => (
-              <AppFormField
-                key={item.name}
-                required={item.required}
-                name={item.name}
-                value={values[item.name]}
-                label={item.label}
-                className=" min-w-[300px] xs:min-w-[200px]  lg:min-w-[400px] "
-              />
-            ))}
-          </div>
-          <div className=" flex gap-5 mx-auto">
-            <AppButton
-              label="Save"
-              handleAction={handleSave}
-              disabled={!isValid || !dirty}
+    <div>
+      <Sheet
+        sx={{
+          display: { xs: "none", md: "initial" },
+          borderLeft: "1px solid",
+          borderColor: "neutral.outlinedBorder",
+        }}
+      >
+        <Box sx={{ pb: 2, display: "flex", alignItems: "center" }}>
+          <Typography sx={{ flex: 1 }}>Add new member</Typography>
+          <IconButton
+            variant="outlined"
+            color="neutral"
+            size="sm"
+            onClick={() => setEditing(false)}
+          >
+            <CloseIcon />
+          </IconButton>
+        </Box>
+        <Divider />
+        <AppImageUploader fieldName="image" />
+
+        <Divider />
+        <div className="flex flex-col gap-2 mt-5">
+          {fields.map((item) => (
+            <AppFormField
+              key={item.name}
+              required={item.required}
+              name={item.name}
+              label={item.label}
+              value={values[item.name]}
+              
+              className="min-w-[300px] xs:min-w-[200px] lg:min-w-[300px]"
             />
-            <AppButton
-              label="Add more"
-              handleAction={handleAddMoreMembers}
-              disabled={!isValid || !dirty}
-            />
-            <AppButton label="close" handleAction={handleDiscard} />
-          </div>
+          ))}
         </div>
-      </div>
-    </Modal>
+        <div className="flex gap-5 mx-auto">
+          <AppButton
+            label="Save"
+            handleAction={() => handleSave()}
+            disabled={!isValid || !dirty}
+          />
+          <AppButton
+            label="Add more"
+            handleAction={() => handleAddMoreMembers()}
+            disabled={!isValid || !dirty}
+          />
+
+          <AppButton label="Discard" handleAction={handleDiscard} />
+        </div>
+      </Sheet>
+    </div>
   );
 };
 

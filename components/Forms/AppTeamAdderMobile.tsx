@@ -22,7 +22,7 @@ const AppTeamAdderMobile: FC<Props> = ({ fields, setOpenModal, openModal }) => {
     dirty,
     isValid,
     values,
-  } = useTeamAdder({ setOpenModal: setOpenModal });
+  } = useTeamAdder();
 
   return (
     openModal && (
