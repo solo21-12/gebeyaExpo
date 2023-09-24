@@ -16,18 +16,23 @@ import { textCliper } from "@/utils";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { AiFillLinkedin } from "react-icons/ai";
+import { AppTeamEditorMobile } from "..";
+import { Field } from "@/types/register";
+import { useExhibitorPortalContext } from "@/context/ExhibitorPortalContext";
 
 type Props = {
   teams: Teams[] | null;
   openModal: any;
+  fields: Field[];
 };
 
-const AppTeamLister: FC<Props> = ({ teams, openModal }) => {
+const AppTeamLister: FC<Props> = ({ teams, openModal, fields }) => {
   const router = useRouter();
   const [teamBioStates, setTeamBioStates] = useState<boolean[]>(
     teams?.map(() => false) || []
   );
 
+  const { editingTeam, editing } = useExhibitorPortalContext();
   const toggleTeamBio = (teamIndex: number) => {
     setTeamBioStates((prevStates) => {
       const updatedStates = [...prevStates];
@@ -45,97 +50,101 @@ const AppTeamLister: FC<Props> = ({ teams, openModal }) => {
       }}
     >
       {teams?.map((team, index) => (
-        <Sheet
-          key={index}
-          component="li"
-          variant="outlined"
-          sx={{
-            borderRadius: "sm",
-            p: 2,
-            listStyle: "none",
-            // Add a minimum height of 250px to each grid item
-            maxHeight: "300px",
-          }}
-        >
-          <div className="flex justify-between items-center">
-            <div className="flex gap-2">
-              <Avatar src={team.image} sx={{ borderRadius: "sm" }} />
-              <div>
-                <Typography>
-                  {team.firstName} {team.middleName} {team.lastName}
-                </Typography>
-                <Typography level="body-xs">{team.jobTitle}</Typography>
+        <div key={index}>
+          <Sheet
+            component="li"
+            variant="outlined"
+            sx={{
+              borderRadius: "sm",
+              p: 2,
+              listStyle: "none",
+              maxHeight: "300px",
+            }}
+          >
+            <div className="flex justify-between items-center">
+              <div className="flex gap-2">
+                <Avatar src={team.image} sx={{ borderRadius: "sm" }} />
+                <div>
+                  <Typography>
+                    {team.firstName} {team.middleName} {team.lastName}
+                  </Typography>
+                  <Typography level="body-xs">{team.jobTitle}</Typography>
+                </div>
               </div>
-            </div>
-            <div
-              className="cursor-pointer text-xl hover:bg-BlueLighter hover:bg-opacity-10 p-2 rounded-full"
-              onClick={(e) => {
-                e.stopPropagation();
-                openModal(e, team);
-              }}
-            >
-              <CiMenuKebab />
-            </div>
-          </div>
-          <Divider component="div" sx={{ my: 2 }} />
-          <List sx={{ "--ListItemDecorator-size": "48px" }}>
-            <ListItem sx={{ alignItems: "flex-start" }}>
-              <ListItemDecorator
-                sx={{
-                  "&:before": {
-                    content: '""',
-                    position: "absolute",
-                    height: "100%",
-                    width: "2px",
-                    bgcolor: "divider",
-                    left: "calc(var(--ListItem-paddingLeft) + 15px)",
-                    top: "50%",
-                  },
+              <div
+                className="cursor-pointer text-xl hover:bg-BlueLighter hover:bg-opacity-10 p-2 rounded-full"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openModal(e, team);
                 }}
               >
-                <AiFillLinkedin className="rounded-full text-3xl bg-BlueLighter text-White p-1" />
-              </ListItemDecorator>
-              <ListItemContent>
-                <Typography fontSize="sm">Linkedin</Typography>
-                <Typography level="body-xs">{team.linkedinLink}</Typography>
-              </ListItemContent>
-              <Button
-                className="bg-BlueLighter text-xs px-2 hover:bg-BlueLighter/90"
-                size="sm"
-                onClick={() => router.push(team.linkedinLink as string)}
-              >
-                <Link
-                  href={team.linkedinLink as string}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <CiMenuKebab />
+              </div>
+            </div>
+            <Divider component="div" sx={{ my: 2 }} />
+            <List sx={{ "--ListItemDecorator-size": "48px" }}>
+              <ListItem sx={{ alignItems: "flex-start" }}>
+                <ListItemDecorator
+                  sx={{
+                    "&:before": {
+                      content: '""',
+                      position: "absolute",
+                      height: "100%",
+                      width: "2px",
+                      bgcolor: "divider",
+                      left: "calc(var(--ListItem-paddingLeft) + 15px)",
+                      top: "50%",
+                    },
+                  }}
                 >
-                  Connect
-                </Link>
-              </Button>
-            </ListItem>
-            <ListItem sx={{ alignItems: "flex-start" }}>
-              <ListItemDecorator>
-                <SiAboutdotme className="rounded-full text-3xl bg-BlueLighter text-White p-1" />
-              </ListItemDecorator>
-              <ListItemContent>
-                <Typography fontSize="sm">Bio</Typography>
-                <Typography level="body-xs">
-                  {teamBioStates[index]
-                    ? team.description
-                    : textCliper(team.description, 50)}
-                </Typography>
-              </ListItemContent>
+                  <AiFillLinkedin className="rounded-full text-3xl bg-BlueLighter text-White p-1" />
+                </ListItemDecorator>
+                <ListItemContent>
+                  <Typography fontSize="sm">Linkedin</Typography>
+                  <Typography level="body-xs">{team.linkedinLink}</Typography>
+                </ListItemContent>
+                <Button
+                  className="bg-BlueLighter text-xs px-2 hover:bg-BlueLighter/90"
+                  size="sm"
+                  onClick={() => router.push(team.linkedinLink as string)}
+                >
+                  <Link
+                    href={team.linkedinLink as string}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Connect
+                  </Link>
+                </Button>
+              </ListItem>
+              <ListItem sx={{ alignItems: "flex-start" }}>
+                <ListItemDecorator>
+                  <SiAboutdotme className="rounded-full text-3xl bg-BlueLighter text-White p-1" />
+                </ListItemDecorator>
+                <ListItemContent>
+                  <Typography fontSize="sm">Bio</Typography>
+                  <Typography level="body-xs">
+                    {teamBioStates[index]
+                      ? team.description
+                      : textCliper(team.description, 50)}
+                  </Typography>
+                </ListItemContent>
 
-              <Button
-                className="bg-BlueLighter text-xs hover:bg-BlueLighter/90"
-                size="sm"
-                onClick={() => toggleTeamBio(index)}
-              >
-                {teamBioStates[index] ? "Less" : "more"}
-              </Button>
-            </ListItem>
-          </List>
-        </Sheet>
+                <Button
+                  className="bg-BlueLighter text-xs hover:bg-BlueLighter/90"
+                  size="sm"
+                  onClick={() => toggleTeamBio(index)}
+                >
+                  {teamBioStates[index] ? "Less" : "more"}
+                </Button>
+              </ListItem>
+            </List>
+          </Sheet>
+          {editing && editingTeam?.id == team.id && (
+            <AppTeamEditorMobile fields={fields} initialValues={editingTeam} />
+          )}
+          <Divider />
+        </div>
       ))}
     </List>
   );

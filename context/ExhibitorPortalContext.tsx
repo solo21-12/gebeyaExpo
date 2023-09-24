@@ -14,6 +14,7 @@ import ExhibitorsData, {
   notification as NotificationData,
 } from "@/data/temporarayData";
 import { Notification } from "../types/exhibitor";
+import { FormikValues } from "formik";
 
 type Props = {
   children: ReactNode;
@@ -28,6 +29,8 @@ type Context = {
   setEditing: Dispatch<SetStateAction<boolean>>;
   adding: boolean;
   setAdding: Dispatch<SetStateAction<boolean>>;
+  editingTeam: FormikValues | null;
+  setEditingTeam: Dispatch<SetStateAction<FormikValues | null>>;
 };
 
 export const PortalContext = createContext<Context | undefined>(undefined);
@@ -39,6 +42,7 @@ const ExhibitorPortalContext: FC<Props> = ({ children }) => {
   const [notification, setNotification] = useState<Notification[]>([]);
   const [editing, setEditing] = useState<boolean>(false);
   const [adding, setAdding] = useState<boolean>(false);
+  const [editingTeam, setEditingTeam] = useState<FormikValues | null>(null);
 
   useEffect(() => {
     const currentUserNotification = NotificationData.filter(
@@ -56,6 +60,8 @@ const ExhibitorPortalContext: FC<Props> = ({ children }) => {
     setAdding,
     setEditing,
     adding,
+    setEditingTeam,
+    editingTeam,
   };
 
   return (

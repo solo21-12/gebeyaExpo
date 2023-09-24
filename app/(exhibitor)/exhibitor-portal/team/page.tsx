@@ -82,9 +82,10 @@ const page = () => {
     adding,
     setAdding,
     setEditing,
+    editingTeam,
+    setEditingTeam,
   } = useExhibitorPortalContext();
   const [teamEditorModal, setTeamEditorModal] = useState<boolean>(false);
-  const [editingTeam, setEditingTeam] = useState<FormikValues | null>(null);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [currentTeam, setCurrentTeam] = useState<Teams | null>(null);
 
@@ -168,7 +169,7 @@ const page = () => {
         >
           <AppTeamAdderMobile fields={fields} openModal={adding} />
           <div className=" flex flex-col md:flex-row justify-between gap-10 ">
-            {teams && <AppTeamLister teams={teams} openModal={handleClick} />}
+            {teams && <AppTeamLister teams={teams} openModal={handleClick} fields={fields} />}
             {editing && (
               <AppTeamEditor
                 // @ts-ignore
@@ -186,13 +187,6 @@ const page = () => {
                 initialValues={initialValues}
               />
             )}
-            
-            {/* <AppTeamEditorMobile
-              fields={fields}
-              setOpenModal={setTeamEditorModal}
-              openModal={teamEditorModal}
-              initialValues={editingTeam}
-            /> */}
           </div>
           <Menu
             id="basic-menu"

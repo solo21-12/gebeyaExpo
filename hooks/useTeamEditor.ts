@@ -2,7 +2,7 @@ import { useExhibitorPortalContext } from "@/context/ExhibitorPortalContext";
 import { FormikValues, useFormikContext } from "formik";
 
 type Props = {
-  initialValues: FormikValues;
+  initialValues: FormikValues | null;
 };
 
 const useTeamEditor = ({ initialValues }: Props) => {
@@ -13,7 +13,9 @@ const useTeamEditor = ({ initialValues }: Props) => {
   let { teams } = currentUser;
 
   const handleDiscard = () => {
-    setValues(initialValues);
+    if (initialValues) {
+      setValues(initialValues);
+    }
     setEditing(false);
     handleReset();
   };
