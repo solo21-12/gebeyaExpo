@@ -75,7 +75,6 @@ const fields: Field[] = [
 ];
 
 const page = () => {
-  const [openModal, setOpenModal] = useState<boolean>(false);
   const {
     currentUser,
     setCurrentUser,
@@ -86,17 +85,17 @@ const page = () => {
   } = useExhibitorPortalContext();
   const [teamEditorModal, setTeamEditorModal] = useState<boolean>(false);
   const [editingTeam, setEditingTeam] = useState<FormikValues | null>(null);
-  const { teams } = currentUser;
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [currentTeam, setCurrentTeam] = useState<Teams | null>(null);
 
+  const { teams } = currentUser;
   const open = Boolean(anchorEl);
-
   const { submitForm } = useAPI();
 
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   const handleSubmit = (values: FormikValues) => {
     console.log(values);
   };
@@ -152,31 +151,22 @@ const page = () => {
       <div className=" mt-32 lg:mt-20  ml-5 w-[85%] xs:w-[65%] lg:w-[70%] xl:w-[77%] px-2 mx-auto md:ml-[280px] xs:ml-[165px] mr-5 h-[80vh] overflow-y-auto ">
         <div className=" flex justify-between sm:items-center mb-2 sm:flex-row flex-col w-[40%] sm:w-full ">
           <Typography level="h2">Teams</Typography>
-          <AppButton
-            label="Add New Member"
-            handleAction={() => {
-              setEditing(false);
-              setAdding(true);
-            }}
-          />
+          {!adding && (
+            <AppButton
+              label="Add New Member"
+              handleAction={() => {
+                setEditing(false);
+                setAdding(true);
+              }}
+            />
+          )}
         </div>
         <AppForm
           initialValues={initialValues}
           onSubmit={handleSubmit}
           validationSchema={validationSchema}
         >
-          <AppTeamAdderMobile
-            fields={fields}
-            openModal={openModal}
-            setOpenModal={setOpenModal}
-          />
-          <AppTeamEditorMobile
-            fields={fields}
-            setOpenModal={setTeamEditorModal}
-            openModal={teamEditorModal}
-            initialValues={editingTeam}
-          />
-
+          <AppTeamAdderMobile fields={fields} openModal={adding} />
           <div className=" flex flex-col md:flex-row justify-between gap-10 ">
             {teams && <AppTeamLister teams={teams} openModal={handleClick} />}
             {editing && (
@@ -196,6 +186,13 @@ const page = () => {
                 initialValues={initialValues}
               />
             )}
+            
+            {/* <AppTeamEditorMobile
+              fields={fields}
+              setOpenModal={setTeamEditorModal}
+              openModal={teamEditorModal}
+              initialValues={editingTeam}
+            /> */}
           </div>
           <Menu
             id="basic-menu"
