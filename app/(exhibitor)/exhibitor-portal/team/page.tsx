@@ -6,7 +6,6 @@ import {
   AppTeamAdderDesktop,
   AppTeamAdderMobile,
   AppTeamEditor,
-  AppTeamEditorDesktop,
   AppTeamEditorMobile,
   AppTeamLister,
 } from "@/components";
