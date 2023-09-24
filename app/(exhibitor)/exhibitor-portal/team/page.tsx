@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
   AppButton,
   AppForm,
+  AppSearchInput,
   AppTeamAdderDesktop,
   AppTeamAdderMobile,
   AppTeamEditor,
@@ -88,10 +89,27 @@ const page = () => {
   const [teamEditorModal, setTeamEditorModal] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [currentTeam, setCurrentTeam] = useState<Teams | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   const { teams } = currentUser;
   const open = Boolean(anchorEl);
   const { submitForm } = useAPI();
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  };
+
+  const filteredTeams = teams
+    ? teams.filter((team) => {
+        const searchLower = searchQuery.toLowerCase();
+        return (
+          team.firstName.toLowerCase().includes(searchLower) ||
+          team.lastName.toLowerCase().includes(searchLower) ||
+          team.jobTitle.toLowerCase().includes(searchLower) ||
+          team.description.toLowerCase().includes(searchLower)
+        );
+      })
+    : [];
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -149,9 +167,12 @@ const page = () => {
           </div>
         </div>
       )}
-      <div className=" mt-32 lg:mt-20  ml-5 w-[85%] xs:w-[65%] lg:w-[70%] xl:w-[77%] px-2 mx-auto md:ml-[280px] xs:ml-[165px] mr-5 h-[80vh] overflow-y-auto ">
-        <div className=" flex justify-between sm:items-center mb-2 sm:flex-row flex-col w-[40%] sm:w-full ">
-          <Typography level="h2">Teams</Typography>
+      <div className=" mt-32 lg:mt-10  ml-5 w-[85%] xs:w-[70%] md:w-[65%] lg:w-[70%]  xl:w-[77%] px-2 mx-auto md:ml-[280px] xs:ml-[145px] mr-5 h-[80vh] overflow-y-auto ">
+        <div className=" flex justify-between items-center mb-5 flex-row w-full gap-5 ">
+          <Typography level="h2" className=" text-2xl">
+            Teams
+          </Typography>
+          <AppSearchInput onSearch={handleSearch} />
           {!adding && (
             <AppButton
               label="Add New Member"
@@ -169,7 +190,13 @@ const page = () => {
         >
           <AppTeamAdderMobile fields={fields} openModal={adding} />
           <div className=" flex flex-col md:flex-row justify-between gap-10 ">
-            {teams && <AppTeamLister teams={teams} openModal={handleClick} fields={fields} />}
+            {teams && (
+              <AppTeamLister
+                teams={filteredTeams}
+                openModal={handleClick}
+                fields={fields}
+              />
+            )}
             {editing && (
               <AppTeamEditor
                 // @ts-ignore

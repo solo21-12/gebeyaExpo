@@ -1,13 +1,32 @@
-import React from "react";
-
+import React, { FC, useState, ChangeEvent } from "react";
 import Typography from "@mui/joy/Typography";
 import Input from "@mui/joy/Input";
 import IconButton from "@mui/joy/IconButton";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import ClearIcon from "@mui/icons-material/Clear"; // Add this import
+import { debounce } from "lodash"; // Add this import
 
-type Props = {};
+type Props = {
+  onSearch: (query: string) => void;
+};
 
-const AppSearchInput = (props: Props) => {
+const AppSearchInput: FC<Props> = ({ onSearch }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+    debouncedSearch(event.target.value);
+  };
+
+  const clearSearch = () => {
+    setSearchQuery("");
+    onSearch("");
+  };
+
+  const debouncedSearch = debounce((query: string) => {
+    onSearch(query);
+  }, 300);
+
   return (
     <div>
       <Input
@@ -15,13 +34,8 @@ const AppSearchInput = (props: Props) => {
         variant="outlined"
         placeholder="Search anything…"
         startDecorator={<SearchRoundedIcon color="primary" />}
-        endDecorator={
-          <IconButton variant="outlined" color="neutral">
-            <Typography fontWeight="lg" fontSize="sm" textColor="text.icon">
-              ⌘ + k
-            </Typography>
-          </IconButton>
-        }
+        onChange={handleSearchChange}
+        value={searchQuery}
         sx={{
           flexBasis: "500px",
           display: {
@@ -31,14 +45,17 @@ const AppSearchInput = (props: Props) => {
           boxShadow: "sm",
         }}
       />
-      <IconButton
-        size="sm"
-        variant="outlined"
-        color="neutral"
-        sx={{ display: { xs: "inline-flex", sm: "none" } }}
-      >
-        <SearchRoundedIcon />
-      </IconButton>
+      {searchQuery && (
+        <IconButton
+          size="sm"
+          variant="outlined"
+          color="danger"
+          onClick={clearSearch}
+          sx={{ display: { xs: "inline-flex", sm: "none" } }}
+        >
+          <ClearIcon />
+        </IconButton>
+      )}
     </div>
   );
 };
