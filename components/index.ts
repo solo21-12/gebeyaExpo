@@ -24,7 +24,6 @@ import AppEditor from "./Forms/AppEditor";
 import AppTeamAdderDesktop from "./Forms/AppTeamAdderDesktop";
 import AppTeamAdderMobile from "./Forms/AppTeamAdderMobile";
 import AppTeamLister from "./Dashboard/AppTeamLister";
-import AppTeamEditorDesktop from "./Dashboard/AppTeamEditorDesktop";
 import AppTeamEditorMobile from "./Dashboard/AppTeamEditorMobile";
 import AppNotification from "./Cards/AppNotification";
 import AppNotificationItem from "./Cards/AppNotificationItem";
@@ -42,7 +41,6 @@ export {
   AppButtonDefult,
   AppTeamEditorMobile,
   AppSidebar,
-  AppTeamEditorDesktop,
   AppListItem,
   AppLoginForm,
   AppTeamAdderDesktop,
