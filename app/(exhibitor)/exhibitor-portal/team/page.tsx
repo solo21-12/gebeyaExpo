@@ -20,7 +20,7 @@ import Typography from "@mui/joy/Typography";
 import { AppMenuItemContent } from "@/components";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { AiOutlineEdit } from "react-icons/ai";
-import { Menu, MenuItem } from "@mui/material";
+import { Divider, Menu, MenuItem } from "@mui/material";
 
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required().label("First name"),
@@ -86,7 +86,6 @@ const page = () => {
     editingTeam,
     setEditingTeam,
   } = useExhibitorPortalContext();
-  const [teamEditorModal, setTeamEditorModal] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [currentTeam, setCurrentTeam] = useState<Teams | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -167,79 +166,80 @@ const page = () => {
           </div>
         </div>
       )}
-      <div className=" mt-32 lg:mt-10  ml-5 w-[85%] xs:w-[70%] md:w-[65%] lg:w-[70%]  xl:w-[77%] px-2 mx-auto md:ml-[280px] xs:ml-[145px] mr-5 h-[80vh] overflow-y-auto ">
-        <div className=" flex justify-between items-center mb-5 flex-row w-full gap-5 ">
-          <Typography level="h2" className=" text-2xl">
+      <div className=" mt-[7rem] lg:mt-10  ml-5 w-[90%] xs:w-[70%] md:w-[65%] lg:w-[70%]  xl:w-[77%] md:px-2 mx-auto md:ml-[280px] xs:ml-[145px] mr-5  ">
+        <div className=" flex justify-between items-center mb-5 flex-row w-full gap-2 ">
+          <Typography level="h2" className=" text-2xl hidden md:block">
             Teams
           </Typography>
           <AppSearchInput onSearch={handleSearch} />
-          {!adding && (
-            <AppButton
-              label="Add New Member"
-              handleAction={() => {
-                setEditing(false);
-                setAdding(true);
-              }}
-            />
-          )}
-        </div>
-        <AppForm
-          initialValues={initialValues}
-          onSubmit={handleSubmit}
-          validationSchema={validationSchema}
-        >
-          <AppTeamAdderMobile fields={fields} openModal={adding} />
-          <div className=" flex flex-col md:flex-row justify-between gap-10 ">
-            {teams && (
-              <AppTeamLister
-                teams={filteredTeams}
-                openModal={handleClick}
-                fields={fields}
-              />
-            )}
-            {editing && (
-              <AppTeamEditor
-                // @ts-ignore
-                team={editingTeam}
-                setEditing={setEditing}
-                fields={fields}
-                // @ts-ignore
-                initialValues={editingTeam}
-              />
-            )}
-            {adding && (
-              <AppTeamAdderDesktop
-                fields={fields}
-                setEditing={setAdding}
-                initialValues={initialValues}
-              />
-            )}
-          </div>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
+          <AppButton
+            label="Add New Member"
+            handleAction={() => {
+              setEditing(false);
+              setAdding(true);
             }}
+          />
+         
+        </div>
+        <div className="h-[80vh] overflow-y-auto px-5">
+          <AppForm
+            initialValues={initialValues}
+            onSubmit={handleSubmit}
+            validationSchema={validationSchema}
           >
-            <MenuItem onClick={() => handleDelete(currentTeam)}>
-              <AppMenuItemContent
-                icon={<RiDeleteBin6Line className="text-2xl text-red-500" />}
-                title="Delete"
-                description="Delete this member"
-              />
-            </MenuItem>
-            <MenuItem onClick={() => handleEdit(currentTeam)}>
-              <AppMenuItemContent
-                icon={<AiOutlineEdit className="text-2xl text-yellow-500" />}
-                title="Edit"
-                description="Edit this member profile"
-              />
-            </MenuItem>
-          </Menu>
-        </AppForm>
+            <AppTeamAdderMobile fields={fields} openModal={adding} />
+            <div className=" flex flex-col md:flex-row justify-between gap-10 ">
+              {teams && (
+                <AppTeamLister
+                  teams={filteredTeams}
+                  openModal={handleClick}
+                  fields={fields}
+                />
+              )}
+              {editing && (
+                <AppTeamEditor
+                  // @ts-ignore
+                  team={editingTeam}
+                  setEditing={setEditing}
+                  fields={fields}
+                  // @ts-ignore
+                  initialValues={editingTeam}
+                />
+              )}
+              {adding && (
+                <AppTeamAdderDesktop
+                  fields={fields}
+                  setEditing={setAdding}
+                  initialValues={initialValues}
+                />
+              )}
+            </div>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem onClick={() => handleDelete(currentTeam)}>
+                <AppMenuItemContent
+                  icon={<RiDeleteBin6Line className="text-2xl text-red-500" />}
+                  title="Delete"
+                  description="Delete this member"
+                />
+              </MenuItem>
+              <MenuItem onClick={() => handleEdit(currentTeam)}>
+                <AppMenuItemContent
+                  icon={<AiOutlineEdit className="text-2xl text-yellow-500" />}
+                  title="Edit"
+                  description="Edit this member profile"
+                />
+              </MenuItem>
+            </Menu>
+          </AppForm>
+        </div>
       </div>
     </div>
   );

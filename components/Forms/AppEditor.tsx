@@ -91,7 +91,7 @@ const AppEditor: FC<Props> = ({ FieldValue, setSubmit, steps }) => {
         </div>
       ))}
       {edit && (
-        <div className=" flex gap-5">
+        <div className=" flex gap-5 mt-10">
           <AppButton
             label={"Submit"}
             handleAction={handleEdit}
