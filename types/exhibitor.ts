@@ -15,31 +15,21 @@ export interface Teams {
   jobTitle: string;
   description: string;
   linkedinLink?: string;
+  telegramLink?: string;
+  facebookLink?: string;
   image?: string;
 }
 
-export interface TempoTeams {
-  id?: string;
-  firstName: string;
-  lastName: string;
-  middleName?: string;
-  jobTitle: string;
-  description: string;
-  linkedinLink?: string;
-  image?: string;
-  bgColor?: string;
+export interface Categories {
+  title: string;
 }
 
 export interface Product {
   title: string;
   description: string;
-  slug: string;
   image?: string;
-  categorie: [
-    {
-      title: string;
-    }
-  ];
+  categorie: string[];
+  id: number | string;
 }
 
 export interface SocialLinks {
