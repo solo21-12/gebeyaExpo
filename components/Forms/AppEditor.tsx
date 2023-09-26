@@ -97,7 +97,7 @@ const AppEditor: FC<Props> = ({ FieldValue, setSubmit, steps }) => {
             handleAction={handleEdit}
             disabled={!dirty}
           />
-          <AppButtonDefult label={"Discard"} handleAction={handleDiscard} />
+          <AppButton label={"Discard"} handleAction={handleDiscard} />
         </div>
       )}
     </div>

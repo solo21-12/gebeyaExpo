@@ -19,7 +19,7 @@ export const AppInput = ({
       type={type ? type : "text"}
       variant="outlined"
       {...others}
-      size="small"
+      size="medium"
     />
   );
 };

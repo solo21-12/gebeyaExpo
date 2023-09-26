@@ -31,6 +31,8 @@ type Context = {
   setAdding: Dispatch<SetStateAction<boolean>>;
   editingTeam: FormikValues | null;
   setEditingTeam: Dispatch<SetStateAction<FormikValues | null>>;
+  editingProduct: FormikValues | null;
+  setEditingProduct: Dispatch<SetStateAction<FormikValues | null>>;
 };
 
 export const PortalContext = createContext<Context | undefined>(undefined);
@@ -43,6 +45,9 @@ const ExhibitorPortalContext: FC<Props> = ({ children }) => {
   const [editing, setEditing] = useState<boolean>(false);
   const [adding, setAdding] = useState<boolean>(false);
   const [editingTeam, setEditingTeam] = useState<FormikValues | null>(null);
+  const [editingProduct, setEditingProduct] = useState<FormikValues | null>(
+    null
+  );
 
   useEffect(() => {
     const currentUserNotification = NotificationData.filter(
@@ -62,6 +67,8 @@ const ExhibitorPortalContext: FC<Props> = ({ children }) => {
     adding,
     setEditingTeam,
     editingTeam,
+    editingProduct,
+    setEditingProduct,
   };
 
   return (

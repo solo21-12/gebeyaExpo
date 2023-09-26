@@ -1,5 +1,5 @@
-import { Teams } from "@/types/exhibitor";
-import React, { Dispatch, FC, SetStateAction } from "react";
+import { Product, Teams } from "@/types/exhibitor";
+import React, { Dispatch, FC, SetStateAction, useEffect } from "react";
 import Box from "@mui/joy/Box";
 import Typography from "@mui/joy/Typography";
 import IconButton from "@mui/joy/IconButton";
@@ -8,35 +8,48 @@ import Sheet from "@mui/joy/Sheet";
 import CloseIcon from "@mui/icons-material/Close";
 import { Field } from "@/types/register";
 import { FormikValues, useFormikContext } from "formik";
-import { AppButton, AppFormField, AppImageUploader } from "..";
-import { useTeamEditor } from "@/hooks";
+import {
+  AppButton,
+  AppFormField,
+  AppImageUploader,
+  AppMultipleItemsForm,
+} from "..";
+import { useProductEditor, useTeamEditor } from "@/hooks";
 
 type Props = {
-  team: Teams | null;
+  product: Product | null;
   setEditing: Dispatch<SetStateAction<boolean>>;
   fields: Field[];
   initialValues: FormikValues;
+  multipleField: Field;
 };
 
-const AppTeamEditor: FC<Props> = ({
-  team,
+const AppProductEditorDesktop: FC<Props> = ({
+  product,
   setEditing,
   fields,
   initialValues,
+  multipleField,
 }) => {
-  const { handleDiscard, handleSave, dirty, isValid, values } = useTeamEditor({
-    initialValues: initialValues,
-  });
-  const { handleReset } = useFormikContext<FormikValues>();
+  const { handleDiscard, handleSave, dirty, isValid, values } =
+    useProductEditor({
+      initialValues: initialValues,
+    });
+  const { handleReset, setValues } = useFormikContext<FormikValues>();
+  useEffect(() => {
+    setValues(initialValues);
+  }, [product]);
+
   return (
-    <div className=" h-[60vh] ">
-      {team && (
+    <div className=" h-[30vh]">
+      {product && (
         <>
           <Sheet
             sx={{
               display: { xs: "none", md: "initial" },
               borderLeft: "1px solid",
               borderColor: "neutral.outlinedBorder",
+              
             }}
           >
             <Box sx={{ pb: 2, display: "flex", alignItems: "center" }}>
@@ -46,7 +59,7 @@ const AppTeamEditor: FC<Props> = ({
                 color="neutral"
                 size="sm"
                 onClick={() => {
-                  handleReset()
+                  handleReset();
                   setEditing(false);
                 }}
               >
@@ -54,7 +67,7 @@ const AppTeamEditor: FC<Props> = ({
               </IconButton>
             </Box>
             <Divider />
-            <AppImageUploader fieldName={"image"} imageUrl={team.image} />
+            <AppImageUploader fieldName={"image"} imageUrl={product.image} />
 
             <Divider />
             <div className=" flex flex-col gap-2 mt-5">
@@ -68,6 +81,10 @@ const AppTeamEditor: FC<Props> = ({
                   className=" min-w-[300px] xs:min-w-[200px]  lg:min-w-[300px] "
                 />
               ))}
+              <AppMultipleItemsForm
+                fieldName={multipleField.name}
+                label={multipleField.label}
+              />
             </div>
 
             <div className=" flex gap-5 mx-auto mt-5">
@@ -86,4 +103,4 @@ const AppTeamEditor: FC<Props> = ({
   );
 };
 
-export default AppTeamEditor;
+export default AppProductEditorDesktop;

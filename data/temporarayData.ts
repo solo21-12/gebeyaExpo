@@ -62,86 +62,58 @@ let ExhibitorsData: ExhibitorsDataType[] = [
       {
         title: "Product one",
         description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+        id: "product-one",
         image: "/d1.png",
-        categorie: [
-          {
-            title: "Auto",
-          },
-        ],
+        categorie: ["Auto", "Car", "Automobile"],
       },
       {
         title: "Product two",
         description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+        id: "product-two",
         image: "/eth6.png",
-        categorie: [
-          {
-            title: "Auto",
-          },
-        ],
+        categorie: ["Auto"],
       },
       {
         title: "Product three",
         description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+        id: "product-three",
         image: "/gabi10.png",
-        categorie: [
-          {
-            title: "Construcation",
-          },
-        ],
+        categorie: ["Construction"],
       },
       {
         title: "Product four",
         description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+        id: "product-four",
         image: "/p4.png",
-        categorie: [
-          {
-            title: "Construcation",
-          },
-        ],
+        categorie: ["Construction"],
       },
       {
         title: "Product five",
         description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+        id: "product-five",
         image: "/p18.png",
-        categorie: [
-          {
-            title: "Food",
-          },
-        ],
+        categorie: ["Food"],
       },
       {
         title: "Product six",
         description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+        id: "product-six",
         image: "/p14.png",
-        categorie: [
-          {
-            title: "Food",
-          },
-        ],
+        categorie: ["Food"],
       },
       {
         title: "Product seven",
         description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+        id: "product-seven",
         image: "/p12.png",
-        categorie: [
-          {
-            title: "Beauty",
-          },
-        ],
+        categorie: ["Beauty"],
       },
     ],
     social: {
@@ -164,6 +136,8 @@ let ExhibitorsData: ExhibitorsDataType[] = [
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         linkedinLink: "https://www.linkdin.com",
+        telegramLink: "https://www.linkdin.com",
+        facebookLink: "https://www.linkdin.com",
         image: "/p10.png",
       },
       {
@@ -175,6 +149,7 @@ let ExhibitorsData: ExhibitorsDataType[] = [
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         linkedinLink: "https://www.linkdin.com",
+        telegramLink: "https://www.linkdin.com",
       },
       {
         id: 3,
@@ -185,6 +160,7 @@ let ExhibitorsData: ExhibitorsDataType[] = [
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         linkedinLink: "https://www.linkdin.com",
+        facebookLink: "https://www.linkdin.com",
         image: "/p15.png",
       },
       {
@@ -196,6 +172,8 @@ let ExhibitorsData: ExhibitorsDataType[] = [
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         linkedinLink: "https://www.linkdin.com",
+        telegramLink: "https://www.linkdin.com",
+
         image: "/p10.png",
       },
       {
@@ -204,6 +182,8 @@ let ExhibitorsData: ExhibitorsDataType[] = [
         lastName: "Beyene",
         middleName: "",
         jobTitle: "CEO",
+        facebookLink: "https://www.linkdin.com",
+
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit.  Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         linkedinLink: "https://www.linkdin.com",
@@ -307,447 +287,448 @@ let ExhibitorsData: ExhibitorsDataType[] = [
       // },
     ],
   },
-  {
-    id: 2,
-    businessName: "eTech Inc",
-    notificationCount: 2,
+  // {
+  //   id: 2,
+  //   businessName: "eTech Inc",
+  //   notificationCount: 2,
 
-    DescriptionOfBusiness:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-    email: "example@gmail.com",
-    rentedBooth: "10A ",
-    image: "/partner2.webp",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur",
-    address: [
-      {
-        phone: "+25191234567",
-        telephone: "+2519123654",
-        city: "Addis Ababa",
-        country: "Ethiopi",
-        streetNumber: "123665",
-        zipCode: "23231",
-      },
-    ],
-    products: [
-      {
-        title: "Product one",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/d1.png",
-        categorie: [
-          {
-            title: "category one",
-          },
-        ],
-      },
-      {
-        title: "Product two",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/eth6.png",
-        categorie: [
-          {
-            title: "category one",
-          },
-        ],
-      },
-      {
-        title: "Product three",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/gabi10.png",
-        categorie: [
-          {
-            title: "category two",
-          },
-        ],
-      },
-      {
-        title: "Product four",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p4.png",
-        categorie: [
-          {
-            title: "category two",
-          },
-        ],
-      },
-      {
-        title: "Product five",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p18.png",
-        categorie: [
-          {
-            title: "category three",
-          },
-        ],
-      },
-      {
-        title: "Product six",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p14.png",
-        categorie: [
-          {
-            title: "category three",
-          },
-        ],
-      },
-      {
-        title: "Product seven",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p12.png",
-        categorie: [
-          {
-            title: "category four",
-          },
-        ],
-      },
-    ],
-    social: {
-      youTubeLink: "www.youtube.com",
-      tikTokLink: "www.tiktok.com",
-      telegramChannel: "www.telegram.com",
-      websiteLink: "www.solo.com",
-      linkedinLink: "www.linkdin.com",
-      tvChannelName: "www.solo.tv",
-      faceBookLink: "www.fb.com",
-      instagram: "www.instagram.com",
-    },
-    teams: [
-      {
-        firstName: "Dawit Abraham",
-        lastName: "Beyene",
-        middleName: "",
-        jobTitle: "React Developer",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        linkedinLink: "www.linkdin.com",
-        image: "/p10.pnj",
-      },
-      {
-        firstName: "Bruik Abraham",
-        lastName: "Beyene",
-        middleName: "",
-        jobTitle: "CEO",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        linkedinLink: "www.linkdin.com",
-      },
-      {
-        firstName: "Jhon Dhoy",
-        lastName: "Lojjo",
-        middleName: "",
-        jobTitle: "Manager",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        linkedinLink: "www.linkdin.com",
-        image: "/p15.pnj",
-      },
-    ],
-  },
-  {
-    id: 3,
-    businessName: "B & B Construction",
-    DescriptionOfBusiness:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-    email: "example@gmail.com",
-    notificationCount: 2,
+  //   DescriptionOfBusiness:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //   email: "example@gmail.com",
+  //   rentedBooth: "10A ",
+  //   image: "/partner2.webp",
+  //   shortDescription:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur",
+  //   address: [
+  //     {
+  //       phone: "+25191234567",
+  //       telephone: "+2519123654",
+  //       city: "Addis Ababa",
+  //       country: "Ethiopi",
+  //       streetNumber: "123665",
+  //       zipCode: "23231",
+  //     },
+  //   ],
+  //   products:
+  //   [
+  //     {
+  //       title: "Product one",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/d1.png",
+  //       categorie: [
+  //         {
+  //           title: "category one",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product two",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/eth6.png",
+  //       categorie: [
+  //         {
+  //           title: "category one",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product three",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/gabi10.png",
+  //       categorie: [
+  //         {
+  //           title: "category two",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product four",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p4.png",
+  //       categorie: [
+  //         {
+  //           title: "category two",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product five",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p18.png",
+  //       categorie: [
+  //         {
+  //           title: "category three",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product six",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p14.png",
+  //       categorie: [
+  //         {
+  //           title: "category three",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product seven",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p12.png",
+  //       categorie: [
+  //         {
+  //           title: "category four",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   social: {
+  //     youTubeLink: "www.youtube.com",
+  //     tikTokLink: "www.tiktok.com",
+  //     telegramChannel: "www.telegram.com",
+  //     websiteLink: "www.solo.com",
+  //     linkedinLink: "www.linkdin.com",
+  //     tvChannelName: "www.solo.tv",
+  //     faceBookLink: "www.fb.com",
+  //     instagram: "www.instagram.com",
+  //   },
+  //   teams: [
+  //     {
+  //       firstName: "Dawit Abraham",
+  //       lastName: "Beyene",
+  //       middleName: "",
+  //       jobTitle: "React Developer",
+  //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //       linkedinLink: "www.linkdin.com",
+  //       image: "/p10.pnj",
+  //     },
+  //     {
+  //       firstName: "Bruik Abraham",
+  //       lastName: "Beyene",
+  //       middleName: "",
+  //       jobTitle: "CEO",
+  //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //       linkedinLink: "www.linkdin.com",
+  //     },
+  //     {
+  //       firstName: "Jhon Dhoy",
+  //       lastName: "Lojjo",
+  //       middleName: "",
+  //       jobTitle: "Manager",
+  //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //       linkedinLink: "www.linkdin.com",
+  //       image: "/p15.pnj",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 3,
+  //   businessName: "B & B Construction",
+  //   DescriptionOfBusiness:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //   email: "example@gmail.com",
+  //   notificationCount: 2,
 
-    rentedBooth: "10A ",
-    image: "/partner3.png",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur",
-    address: [
-      {
-        phone: "+25191234567",
-        telephone: "+2519123654",
-        city: "Addis Ababa",
-        country: "Ethiopi",
-        streetNumber: "123665",
-        zipCode: "23231",
-      },
-    ],
-    products: [
-      {
-        title: "Product one",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/d1.png",
-        categorie: [
-          {
-            title: "category one",
-          },
-        ],
-      },
-      {
-        title: "Product two",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/eth6.png",
-        categorie: [
-          {
-            title: "category one",
-          },
-        ],
-      },
-      {
-        title: "Product three",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/gabi10.png",
-        categorie: [
-          {
-            title: "category two",
-          },
-        ],
-      },
-      {
-        title: "Product four",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p4.png",
-        categorie: [
-          {
-            title: "category two",
-          },
-        ],
-      },
-      {
-        title: "Product five",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p18.png",
-        categorie: [
-          {
-            title: "category three",
-          },
-        ],
-      },
-      {
-        title: "Product six",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p14.png",
-        categorie: [
-          {
-            title: "category three",
-          },
-        ],
-      },
-      {
-        title: "Product seven",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p12.png",
-        categorie: [
-          {
-            title: "category four",
-          },
-        ],
-      },
-    ],
-    social: {
-      youTubeLink: "www.youtube.com",
-      tikTokLink: "www.tiktok.com",
-      telegramChannel: "www.telegram.com",
-      websiteLink: "www.solo.com",
-      linkedinLink: "www.linkdin.com",
-      tvChannelName: "www.solo.tv",
-      faceBookLink: "www.fb.com",
-      instagram: "www.instagram.com",
-    },
-    teams: [
-      {
-        firstName: "Dawit Abraham",
-        lastName: "Beyene",
-        middleName: "",
-        jobTitle: "React Developer",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        linkedinLink: "www.linkdin.com",
-        image: "/p10.pnj",
-      },
-      {
-        firstName: "Bruik Abraham",
-        lastName: "Beyene",
-        middleName: "",
-        jobTitle: "CEO",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        linkedinLink: "www.linkdin.com",
-      },
-      {
-        firstName: "Jhon Dhoy",
-        lastName: "Lojjo",
-        middleName: "",
-        jobTitle: "Manager",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        linkedinLink: "www.linkdin.com",
-        image: "/p15.pnj",
-      },
-    ],
-  },
-  {
-    id: 4,
-    businessName: "Flexy Telecom",
-    DescriptionOfBusiness:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-    email: "example@gmail.com",
-    rentedBooth: "10A ",
-    notificationCount: 2,
+  //   rentedBooth: "10A ",
+  //   image: "/partner3.png",
+  //   shortDescription:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur",
+  //   address: [
+  //     {
+  //       phone: "+25191234567",
+  //       telephone: "+2519123654",
+  //       city: "Addis Ababa",
+  //       country: "Ethiopi",
+  //       streetNumber: "123665",
+  //       zipCode: "23231",
+  //     },
+  //   ],
+  //   products: [
+  //     {
+  //       title: "Product one",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/d1.png",
+  //       categorie: [
+  //         {
+  //           title: "category one",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product two",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/eth6.png",
+  //       categorie: [
+  //         {
+  //           title: "category one",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product three",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/gabi10.png",
+  //       categorie: [
+  //         {
+  //           title: "category two",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product four",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p4.png",
+  //       categorie: [
+  //         {
+  //           title: "category two",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product five",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p18.png",
+  //       categorie: [
+  //         {
+  //           title: "category three",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product six",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p14.png",
+  //       categorie: [
+  //         {
+  //           title: "category three",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product seven",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p12.png",
+  //       categorie: [
+  //         {
+  //           title: "category four",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   social: {
+  //     youTubeLink: "www.youtube.com",
+  //     tikTokLink: "www.tiktok.com",
+  //     telegramChannel: "www.telegram.com",
+  //     websiteLink: "www.solo.com",
+  //     linkedinLink: "www.linkdin.com",
+  //     tvChannelName: "www.solo.tv",
+  //     faceBookLink: "www.fb.com",
+  //     instagram: "www.instagram.com",
+  //   },
+  //   teams: [
+  //     {
+  //       firstName: "Dawit Abraham",
+  //       lastName: "Beyene",
+  //       middleName: "",
+  //       jobTitle: "React Developer",
+  //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //       linkedinLink: "www.linkdin.com",
+  //       image: "/p10.pnj",
+  //     },
+  //     {
+  //       firstName: "Bruik Abraham",
+  //       lastName: "Beyene",
+  //       middleName: "",
+  //       jobTitle: "CEO",
+  //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //       linkedinLink: "www.linkdin.com",
+  //     },
+  //     {
+  //       firstName: "Jhon Dhoy",
+  //       lastName: "Lojjo",
+  //       middleName: "",
+  //       jobTitle: "Manager",
+  //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //       linkedinLink: "www.linkdin.com",
+  //       image: "/p15.pnj",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 4,
+  //   businessName: "Flexy Telecom",
+  //   DescriptionOfBusiness:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //   email: "example@gmail.com",
+  //   rentedBooth: "10A ",
+  //   notificationCount: 2,
 
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur",
-    address: [
-      {
-        phone: "+25191234567",
-        telephone: "+2519123654",
-        city: "Addis Ababa",
-        country: "Ethiopi",
-        streetNumber: "123665",
-        zipCode: "23231",
-      },
-    ],
-    products: [
-      {
-        title: "Product one",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/d1.png",
-        categorie: [
-          {
-            title: "category one",
-          },
-        ],
-      },
-      {
-        title: "Product two",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/eth6.png",
-        categorie: [
-          {
-            title: "category one",
-          },
-        ],
-      },
-      {
-        title: "Product three",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/gabi10.png",
-        categorie: [
-          {
-            title: "category two",
-          },
-        ],
-      },
-      {
-        title: "Product four",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p4.png",
-        categorie: [
-          {
-            title: "category two",
-          },
-        ],
-      },
-      {
-        title: "Product five",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p18.png",
-        categorie: [
-          {
-            title: "category three",
-          },
-        ],
-      },
-      {
-        title: "Product six",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p14.png",
-        categorie: [
-          {
-            title: "category three",
-          },
-        ],
-      },
-      {
-        title: "Product seven",
-        description:
-          "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
-        slug: "product-one",
-        image: "/p12.png",
-        categorie: [
-          {
-            title: "category four",
-          },
-        ],
-      },
-    ],
-    social: {
-      youTubeLink: "www.youtube.com",
-      tikTokLink: "",
-      telegramChannel: "www.telegram.com",
-      websiteLink: "www.solo.com",
-      linkedinLink: "www.linkdin.com",
-      tvChannelName: "www.solo.tv",
-      faceBookLink: "www.fb.com",
-      instagram: "www.instagram.com",
-    },
-    teams: [
-      {
-        firstName: "Dawit Abraham",
-        lastName: "Beyene",
-        middleName: "",
-        jobTitle: "React Developer",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        linkedinLink: "www.linkdin.com",
-        image: "/p10.png",
-      },
-      {
-        firstName: "Bruik Abraham",
-        lastName: "Beyene",
-        middleName: "",
-        jobTitle: "CEO",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        linkedinLink: "www.linkdin.com",
-        image: "/p11.png",
-      },
-      {
-        firstName: "Jhon Dhoy",
-        lastName: "Lojjo",
-        middleName: "",
-        jobTitle: "Manager",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        linkedinLink: "www.linkdin.com",
-        image: "/p15.png",
-      },
-    ],
-  },
+  //   shortDescription:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur",
+  //   address: [
+  //     {
+  //       phone: "+25191234567",
+  //       telephone: "+2519123654",
+  //       city: "Addis Ababa",
+  //       country: "Ethiopi",
+  //       streetNumber: "123665",
+  //       zipCode: "23231",
+  //     },
+  //   ],
+  //   products: [
+  //     {
+  //       title: "Product one",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/d1.png",
+  //       categorie: [
+  //         {
+  //           title: "category one",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product two",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/eth6.png",
+  //       categorie: [
+  //         {
+  //           title: "category one",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product three",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/gabi10.png",
+  //       categorie: [
+  //         {
+  //           title: "category two",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product four",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p4.png",
+  //       categorie: [
+  //         {
+  //           title: "category two",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product five",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p18.png",
+  //       categorie: [
+  //         {
+  //           title: "category three",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product six",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p14.png",
+  //       categorie: [
+  //         {
+  //           title: "category three",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Product seven",
+  //       description:
+  //         "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in corporis facere ex perspiciatis rem beatae doloribus consequuntur, corrupti, eligendi nihil. Ipsum fugit praesentium cum nihil! Saepe earum eaque dolorum!",
+  //       id: "product-one",
+  //       image: "/p12.png",
+  //       categorie: [
+  //         {
+  //           title: "category four",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   social: {
+  //     youTubeLink: "www.youtube.com",
+  //     tikTokLink: "",
+  //     telegramChannel: "www.telegram.com",
+  //     websiteLink: "www.solo.com",
+  //     linkedinLink: "www.linkdin.com",
+  //     tvChannelName: "www.solo.tv",
+  //     faceBookLink: "www.fb.com",
+  //     instagram: "www.instagram.com",
+  //   },
+  //   teams: [
+  //     {
+  //       firstName: "Dawit Abraham",
+  //       lastName: "Beyene",
+  //       middleName: "",
+  //       jobTitle: "React Developer",
+  //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //       linkedinLink: "www.linkdin.com",
+  //       image: "/p10.png",
+  //     },
+  //     {
+  //       firstName: "Bruik Abraham",
+  //       lastName: "Beyene",
+  //       middleName: "",
+  //       jobTitle: "CEO",
+  //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //       linkedinLink: "www.linkdin.com",
+  //       image: "/p11.png",
+  //     },
+  //     {
+  //       firstName: "Jhon Dhoy",
+  //       lastName: "Lojjo",
+  //       middleName: "",
+  //       jobTitle: "Manager",
+  //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //       linkedinLink: "www.linkdin.com",
+  //       image: "/p15.png",
+  //     },
+  //   ],
+  // },
 ];
 
 export default ExhibitorsData;

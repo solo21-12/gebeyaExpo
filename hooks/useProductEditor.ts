@@ -5,13 +5,12 @@ type Props = {
   initialValues: FormikValues | null;
 };
 
-const useTeamEditor = ({ initialValues }: Props) => {
+const useProductEditor = ({ initialValues }: Props) => {
   const { currentUser, setCurrentUser, setEditing } =
     useExhibitorPortalContext();
   const { dirty, isValid, values, handleReset, submitForm, setValues } =
-    useFormikContext<FormikValues>(); 
-  let { teams } = currentUser;
-
+    useFormikContext<FormikValues>();
+  let { products } = currentUser;
   const handleDiscard = () => {
     if (initialValues) {
       setValues(initialValues);
@@ -21,14 +20,19 @@ const useTeamEditor = ({ initialValues }: Props) => {
   };
 
   const handleSave = (currentTeam: FormikValues) => {
-    const teamIndex = teams.findIndex((team) => team.id === currentTeam.id);
+    const productIndex = products.findIndex(
+      (team) => team.id === currentTeam.id
+    );
 
-    if (teamIndex !== -1) {
-      const updatedTeams = [...teams];
+    if (productIndex !== -1) {
+      const updatedProducts = [...products];
 
-      updatedTeams[teamIndex] = { ...updatedTeams[teamIndex], ...currentTeam }; // Merge the changes
+      updatedProducts[productIndex] = {
+        ...updatedProducts[productIndex],
+        ...currentTeam,
+      }; // Merge the changes
 
-      setCurrentUser({ ...currentUser, teams: updatedTeams });
+      setCurrentUser({ ...currentUser, products: updatedProducts });
 
       submitForm().then(() => {
         setEditing(false);
@@ -46,4 +50,4 @@ const useTeamEditor = ({ initialValues }: Props) => {
   };
 };
 
-export default useTeamEditor;
+export default useProductEditor;

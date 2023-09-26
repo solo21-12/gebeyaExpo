@@ -7,7 +7,6 @@ import {
   AppTeamAdderDesktop,
   AppTeamAdderMobile,
   AppTeamEditor,
-  AppTeamEditorMobile,
   AppTeamLister,
 } from "@/components";
 import * as Yup from "yup";
@@ -20,7 +19,7 @@ import Typography from "@mui/joy/Typography";
 import { AppMenuItemContent } from "@/components";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { AiOutlineEdit } from "react-icons/ai";
-import { Divider, Menu, MenuItem } from "@mui/material";
+import { Menu, MenuItem } from "@mui/material";
 
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required().label("First name"),
@@ -29,6 +28,8 @@ const validationSchema = Yup.object().shape({
   jobTitle: Yup.string().required().label("Job title"),
   description: Yup.string().required().label("Description"),
   linkedinLink: Yup.string(),
+  telegramLink: Yup.string(),
+  facebookLink: Yup.string(),
   image: Yup.string(),
 });
 
@@ -39,6 +40,8 @@ const initialValues: FormikValues = {
   jobTitle: "",
   description: "",
   linkedinLink: "",
+  telegramLink: "",
+  facebookLink: "",
   image: "",
 };
 
@@ -71,6 +74,16 @@ const fields: Field[] = [
   {
     name: "linkedinLink",
     label: "Linkedin Channel",
+    required: false,
+  },
+  {
+    name: "telegramLink",
+    label: "Telegram username",
+    required: false,
+  },
+  {
+    name: "facebookLink",
+    label: "Facebook username",
     required: false,
   },
 ];
@@ -141,7 +154,6 @@ const page = () => {
 
   const handleEdit = (team: Teams | null) => {
     if (team) {
-      // setTeamEditorModal(true);
       setEditing(true);
       setAdding(false);
       setEditingTeam(team);
@@ -179,7 +191,6 @@ const page = () => {
               setAdding(true);
             }}
           />
-         
         </div>
         <div className="h-[80vh] overflow-y-auto px-5">
           <AppForm

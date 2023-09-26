@@ -18,7 +18,7 @@ export const NavList: NavListType[] = [
       },
       {
         lable: "Exhibitors Portal",
-        path: "/exhibitor-portal",
+        path: "/exhibitor-portal/profile",
       },
     ],
   },

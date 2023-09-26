@@ -7,20 +7,31 @@ import Sheet from "@mui/joy/Sheet";
 import CloseIcon from "@mui/icons-material/Close";
 import { Field } from "@/types/register";
 import { FormikValues } from "formik";
-import { AppButton, AppFormField, AppImageUploader } from "..";
-import { useTeamAdder } from "@/hooks";
+import {
+  AppButton,
+  AppFormField,
+  AppImageUploader,
+  AppMultipleItemsForm,
+} from "..";
+import { useProductAdder } from "@/hooks";
 
 type Props = {
-  setEditing: (editing: boolean) => void;
   fields: Field[];
-  initialValues: FormikValues;
+  multipleField: Field;
 };
 
-const AppTeamAdderDesktop: FC<Props> = ({ setEditing, fields }) => {
-  const { handleDiscard, handleSave, dirty, isValid,handleAddMoreMembers,values } = useTeamAdder();
+const AppTeamAdderDesktop: FC<Props> = ({ fields, multipleField }) => {
+  const {
+    handleDiscard,
+    handleSave,
+    dirty,
+    isValid,
+    handleAddMoreProducts,
+    values,
+  } = useProductAdder();
 
   return (
-    <div className=" h-[50vh]">
+    <div className="h-[30vh]">
       <Sheet
         sx={{
           display: { xs: "none", md: "initial" },
@@ -29,12 +40,14 @@ const AppTeamAdderDesktop: FC<Props> = ({ setEditing, fields }) => {
         }}
       >
         <Box sx={{ pb: 2, display: "flex", alignItems: "center" }}>
-          <Typography sx={{ flex: 1 }}>Add new member</Typography>
+          <Typography sx={{ flex: 1 }}>Add new product</Typography>
           <IconButton
             variant="outlined"
             color="neutral"
             size="sm"
-            onClick={() => setEditing(false)}
+            onClick={() => {
+              handleDiscard();
+            }}
           >
             <CloseIcon />
           </IconButton>
@@ -51,20 +64,23 @@ const AppTeamAdderDesktop: FC<Props> = ({ setEditing, fields }) => {
               name={item.name}
               label={item.label}
               value={values[item.name]}
-              
               className="min-w-[300px] xs:min-w-[200px] lg:min-w-[300px]"
             />
           ))}
+          <AppMultipleItemsForm
+            fieldName={multipleField.name}
+            label={multipleField.label}
+          />
         </div>
         <div className="flex gap-5 mx-auto mt-5">
           <AppButton
             label="Save"
-            handleAction={() => handleSave()}
+            handleAction={handleSave}
             disabled={!isValid || !dirty}
           />
           <AppButton
             label="Add more"
-            handleAction={() => handleAddMoreMembers()}
+            handleAction={handleAddMoreProducts}
             disabled={!isValid || !dirty}
           />
 

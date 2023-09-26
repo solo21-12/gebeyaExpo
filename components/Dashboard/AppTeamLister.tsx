@@ -15,11 +15,12 @@ import Button from "@mui/joy/Button";
 import { textCliper } from "@/utils";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { AiFillLinkedin } from "react-icons/ai";
-import { AppTeamEditorMobile } from "..";
+import { AppSocialMediaLister, AppTeamEditorMobile } from "..";
 import { Field } from "@/types/register";
 import { useExhibitorPortalContext } from "@/context/ExhibitorPortalContext";
-
+import { AiFillLinkedin } from "react-icons/ai";
+import { BiLogoTelegram } from "react-icons/bi";
+import { GrFacebookOption } from "react-icons/gr";
 type Props = {
   teams: Teams[] | null;
   openModal: any;
@@ -58,7 +59,7 @@ const AppTeamLister: FC<Props> = ({ teams, openModal, fields }) => {
               borderRadius: "sm",
               p: 2,
               listStyle: "none",
-              maxHeight: "300px",
+              maxHeight: "350px",
             }}
           >
             <div className="flex justify-between items-center">
@@ -84,40 +85,6 @@ const AppTeamLister: FC<Props> = ({ teams, openModal, fields }) => {
             <Divider component="div" sx={{ my: 2 }} />
             <List sx={{ "--ListItemDecorator-size": "48px" }}>
               <ListItem sx={{ alignItems: "flex-start" }}>
-                <ListItemDecorator
-                  sx={{
-                    "&:before": {
-                      content: '""',
-                      position: "absolute",
-                      height: "100%",
-                      width: "2px",
-                      bgcolor: "divider",
-                      left: "calc(var(--ListItem-paddingLeft) + 15px)",
-                      top: "50%",
-                    },
-                  }}
-                >
-                  <AiFillLinkedin className="rounded-full text-3xl bg-BlueLighter text-White p-1" />
-                </ListItemDecorator>
-                <ListItemContent>
-                  <Typography fontSize="sm">Linkedin</Typography>
-                  <Typography level="body-xs">{team.linkedinLink}</Typography>
-                </ListItemContent>
-                <Button
-                  className="bg-BlueLighter text-xs px-2 hover:bg-BlueLighter/90"
-                  size="sm"
-                  onClick={() => router.push(team.linkedinLink as string)}
-                >
-                  <Link
-                    href={team.linkedinLink as string}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Connect
-                  </Link>
-                </Button>
-              </ListItem>
-              <ListItem sx={{ alignItems: "flex-start" }}>
                 <ListItemDecorator>
                   <SiAboutdotme className="rounded-full text-3xl bg-BlueLighter text-White p-1" />
                 </ListItemDecorator>
@@ -138,6 +105,29 @@ const AppTeamLister: FC<Props> = ({ teams, openModal, fields }) => {
                   {teamBioStates[index] ? "Less" : "more"}
                 </Button>
               </ListItem>
+              <div className=" flex items-center mt-2">
+                {team.linkedinLink && (
+                  <AppSocialMediaLister
+                    link={team.linkedinLink}
+                    lable={"Linkedin"}
+                    Icon={<AiFillLinkedin />}
+                  />
+                )}
+                {team.telegramLink && (
+                  <AppSocialMediaLister
+                    link={team.telegramLink}
+                    lable={"Telegram"}
+                    Icon={<BiLogoTelegram />}
+                  />
+                )}
+                {team.facebookLink && (
+                  <AppSocialMediaLister
+                    link={team.facebookLink}
+                    lable={"Facebook"}
+                    Icon={<GrFacebookOption />}
+                  />
+                )}
+              </div>
             </List>
           </Sheet>
           {editing && editingTeam?.id == team.id && (
